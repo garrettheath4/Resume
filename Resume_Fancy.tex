@@ -19,6 +19,8 @@
 	
 \newlength{\indwidth}
 \setlength{\indwidth}{\textwidth-.4in}
+\newlength{\listAntispace}
+\setlength{\listAntispace}{-.075in}
 
 \newcommand{\lst}[1]{\begin{itemize} \item #1 \end{itemize}}
 \newcommand{\dated}[2]{
@@ -39,7 +41,7 @@ Lexington, VA 24450 USA & \textit{Email}:
 \vspace{5pt}
 
 \underline{{\large \textbf{Education}}}
-\vspace{-2mm}
+\vspace{\listAntispace}
 \begin{itemize}
 	\item[]
 	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
@@ -72,32 +74,34 @@ Lexington, VA 24450 USA & \textit{Email}:
 
 
 \underline{{\large \textbf{Honors and Awards}}}
-\vspace{-2mm}
+\vspace{\listAntispace}
 \begin{itemize}
 	\item \dated{\href{http://go.wlu.edu/johnson}{Johnson Scholarship} Recipient, Washington \& Lee University, Lexington, VA}{2010}
 		\lst{\$250,000 full-ride scholarship covering tuition and room and board}
 	\item \dated{Eagle Scout Rank of the Boy Scouts of America}{2010}
-	\item \dated{Dean’s Academic Honor List}{2011}
+		\lst{Built cavalettis for a counseling center (22.5 hours of planning and action)}
+	\item \dated{Dean’s Academic Honor List at Washington \& Lee University}{2011}
 	%\item \dated{Robert E. Lee Research Scholars Program Participant}{2011}
 	%	\lst{Deployed a \href{http://www.condorproject.org/}{Condor} cluster on my university's campus}
 	\item \dated{2nd place in the \href{https://web.chapman.edu/informationsecurityupload/contestresults.aspx}{2011 EDUCAUSE Security Awareness Video Contest}}{2011}
-	\item \dated{\href{http://questbridge.org/}{QuestBridge} Scholarship Finalist}{2009}
+	\item \dated{\href{http://questbridge.org/}{QuestBridge} National College Match Scholarship Finalist}{2009}
 	%\item \dated{OSSM Computer Science Scholar Award}{2009}
 	%\item \dated{National Honor Society}{2008}
 \end{itemize}
 
 
 \underline{{\large \textbf{Leadership and Activities}}}
-\vspace{-2mm}
+\vspace{\listAntispace}
 \begin{itemize}
 	\item \dated{Vice President and Secretary of the W\&L Programming Club}{2012-}
 	\item \dated{Vice President for Recruitment of the \href{http://www.sigep.org}{Sigma Phi Epsilon Fraternity} at W\&L}{2011-}
+	\item \dated{Activist of the GLBTQ Equality Initiative at W\&L and member of the \href{http://hrc.org/}{Human Rights Campaign}}{2012-}
+	\item \dated{Attended the \href{http://sc11.supercomputing.org/}{SC11 High Performance Computing Conference} in Seattle, WA}{2011\,\,}
 	\item \dated{IT Advisory Committee Member (Inform ITS of technology needs on campus)}{2010-}
 	\item \dated{Social Media Chair of the \href{http://questscholarsnetwork.org/}{Quest Scholars Network} Chapter of W\&L}{2011-}
 	\item \dated{\href{http://www.youtube.com/user/WLUShakespeare/}{Actor} and Technical Assistant for the Shakespeare Society at W\&L}{2011-}
 	%\item \dated{Masonic ``Student of Today'' Leadership Award}{2006, 2007}
-	\item \dated{Attended the \href{http://sc11.supercomputing.org/}{SC11 High Performance Computing Conference} in Seattle, WA}{2011}
-	%\item \dated{Supercomputing and Parallel Processing Mentorship}{2009-2010}
+	\item \dated{Supercomputing and Parallel Processing Mentorship with Dr. Farideh Samadzadeh}{2009-2010}
 	%	\lst{Implemented Dr. Farideh Samadzadeh's HPC process scheduling algorithm}
 	%\item \dated{Programming competitions}{2009-2011}
 	%	\lst{ACM Regionals, ACSL, USACO}
@@ -109,10 +113,9 @@ Lexington, VA 24450 USA & \textit{Email}:
 \end{itemize}
 
 
-\underline{{\large \textbf{Volunteering}}}
-\vspace{-2mm}
-\begin{itemize}
-	\item \dated{Eagle Scout Project: Cavalettis for Counseling (22.5 hours planning and action)}{2010}
+%\underline{{\large \textbf{Volunteering}}}
+%\vspace{\listAntispace}
+%\begin{itemize}
 	%\begin{itemize}
 	%	\item Built horse training equipment for the Tulsa Boys’ Home (non-profit)
 	%	\item 22.5 total hours of both planning and carrying out the project
@@ -123,20 +126,20 @@ Lexington, VA 24450 USA & \textit{Email}:
 	%	\lst{22.5 hours of assisting with the needs of senior citizens}
 	%\item \dated{Volunteer, Methodist Manor, Tulsa, OK}{2006}
 	%	\lst{40 hours of assisting with the needs of senior citizens}	
-\end{itemize}
+%\end{itemize}
 
 
 \underline{{\large \textbf{Employment}}}
-\vspace{-2mm}
+\vspace{\listAntispace}
 \begin{itemize}
-	\item \dated{Technical specialist at the ITS HelpDesk at W\&L}{April 2012-}
-		\lst{Diagnosed and resolved a 2-year long problem with the campus's Wi-Fi network}
+	\item \dated{Technical specialist at the Information Technology Services HelpDesk at W\&L}{April 2012-}
+		\lst{Resolved a 2-year recurring problem with the campus's Aruba Wi-Fi network and Apple devices}
 	\item \dated{Research Assistant of Computer Science at W\&L with \href{http://cs.wlu.edu/~stough/}{Dr. Joshua Stough}}{June 2011-}
-		\lst{Developed a Condor supercomputing environment and provided technical support
+		\lst{Developed a Condor supercomputing environment and provided support and system administration
 	%	\item Expanding the applicability of this computing system and providing support to users
 		}
 	\item \dated{Information Technology Client Services Assistant at W\&L}{September 2010-May 2011}
-		\lst{Created \href{http://youtu.be/NvOarFOmly0?hd=1}{videos} promoting various aspects of ITS and the university library
+		\lst{Created \href{http://youtu.be/NvOarFOmly0?hd=1}{videos} promoting the ITS department, the university library, and the services they offer
 		%\item Digitized textbooks into a format accessible to visually-impared students on campus
 		}
 	%\item \dated{Smith Brothers Abstract and Title Co.}{June 2009-August 2009}
