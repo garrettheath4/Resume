@@ -6,6 +6,15 @@
 \usepackage{fullpage}
 \usepackage{graphicx}
 \usepackage{calc}
+\usepackage{etoolbox}
+
+\newtoggle{cphs} \togglefalse{cphs}
+\newtoggle{leesummer} \togglefalse{leesummer}
+\newtoggle{leesummerdesc} \togglefalse{leesummerdesc}
+\newtoggle{questiefinalist} \togglefalse{questiefinalist}
+\newtoggle{qbsocial} \togglefalse{qbsocial}
+\newtoggle{volunteering} \togglefalse{volunteering}
+\newtoggle{hobbies} \togglefalse{hobbies}
 
 \hypersetup{linkbordercolor={1 1 1},citebordercolor={0 0 0},urlbordercolor={0 1 0},pdfborder={0 0 0}}
 
@@ -58,11 +67,14 @@ Lexington, VA 24450 USA & \textit{Email}:
 	This residential charter high school intentionally omits GPAs on its transcripts.
 	\end{tabular*}
 	
-	\item[]
-	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
-	\textbf{Charles Page High School}, Sand Springs, OK (Class Rank: 1 of 402) &
-	\textit{2006-2008}
-	\end{tabular*}
+	\iftoggle{cphs} {
+		\item[]
+		\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
+		\textbf{Charles Page High School}, Sand Springs, OK (Class Rank: 1 of 402) &
+		\textit{2006-2008}
+		\end{tabular*}
+	} % else leave out CPHS
+	{ }
 \end{itemize}
 
 \begin{tabular*}{\textwidth}{ p{2.2cm} l }
@@ -74,6 +86,26 @@ Lexington, VA 24450 USA & \textit{Email}:
 \vspace{5pt}
 
 
+\underline{{\large \textbf{Employment}}}
+\vspace{\listAntispace}
+\begin{itemize}
+	\item \dated{Interning Research Assistant at Booz Allen Hamilton}{June 2013-August 2013}
+		\lst{Engineered solution using PHP and Java to increase browser anonymity for a DIA marketing project}
+	\item \dated{Technical specialist at the Information Technology Services HelpDesk at W\&L}{April 2012-}
+		\lst{Resolved a 2-year recurring problem with the campus's Aruba Wi-Fi network and Apple devices}
+	\item \dated{Research Assistant of Computer Science at W\&L with \href{http://cs.wlu.edu/~stough/}{Dr. Joshua Stough}}{June 2011-}
+		\lst{Developed a Condor supercomputing environment and provided support and system administration
+	%	\item Expanding the applicability of this computing system and providing support to users
+		}
+	\item \dated{Information Technology Client Services Assistant at W\&L}{September 2010-May 2011}
+		\lst{Created \href{http://youtu.be/NvOarFOmly0?hd=1}{videos} promoting the ITS department, the university library, and the services they offer
+		%\item Digitized textbooks into a format accessible to visually-impared students on campus
+		}
+	\item \datedTwo{Smith Brothers Abstract and Title Co.}{June 2009-August 2009}{June 2010-August 2010}
+		%\lst{Abstract Cataloger/Indexer, Storage Assistant, and Copy Analyst}
+\end{itemize}
+
+
 \underline{{\large \textbf{Honors and Awards}}}
 \vspace{\listAntispace}
 \begin{itemize}
@@ -82,10 +114,11 @@ Lexington, VA 24450 USA & \textit{Email}:
 	\item \dated{Eagle Scout Rank of the Boy Scouts of America}{2010}
 		\lst{Built cavalettis for a counseling center (22.5 hours of planning and action)}
 	\item \dated{Dean’s Academic Honor List at Washington \& Lee University}{2011}
-	%\item \dated{Robert E. Lee Research Scholars Program Participant}{2011}
-	%	\lst{Deployed a \href{http://www.condorproject.org/}{Condor} cluster on my university's campus}
+	\iftoggle{leesummer}{\item \dated{Robert E. Lee Research Scholars Program Participant}{2011}
+		\iftoggle{leesummerdesc}{\lst{Deployed a \href{http://www.condorproject.org/}{Condor} cluster on my university's campus}}{}
+	}{}
 	\item \dated{2nd place in the \href{https://web.chapman.edu/informationsecurityupload/contestresults.aspx}{2011 EDUCAUSE Security Awareness Video Contest}}{2011}
-	\item \dated{\href{http://questbridge.org/}{QuestBridge} National College Match Scholarship Finalist}{2009}
+	\iftoggle{questiefinalist}{\item \dated{\href{http://questbridge.org/}{QuestBridge} National College Match Scholarship Finalist}{2009}}{}
 	%\item \dated{OSSM Computer Science Scholar Award}{2009}
 	%\item \dated{National Honor Society}{2008}
 \end{itemize}
@@ -99,7 +132,7 @@ Lexington, VA 24450 USA & \textit{Email}:
 	\item \dated{Treasurer of the GLBTQ Equality Initiative at W\&L and member of the \href{http://hrc.org/}{Human Rights Campaign}}{2012-}
 	\item \dated{Attended the \href{http://sc11.supercomputing.org/}{SC11 High Performance Computing Conference} in Seattle, WA}{2011\,\,}
 	\item \dated{IT Advisory Committee Member (Inform W\&L ITS of technology needs on campus)}{2010-}
-	\item \dated{Social Media Chair of the \href{http://questscholarsnetwork.org/}{Quest Scholars Network} Chapter of W\&L}{2011-}
+	\iftoggle{qbsocial}{\item \dated{Social Media Chair of the \href{http://questscholarsnetwork.org/}{Quest Scholars Network} Chapter of W\&L}{2011-}}{}
 	\item \dated{\href{http://www.youtube.com/user/WLUShakespeare/}{Actor} and Technical Assistant for the Shakespeare Society at W\&L}{2011-}
 	%\item \dated{Masonic ``Student of Today'' Leadership Award}{2006, 2007}
 	\item \dated{Supercomputing and Parallel Processing Mentorship with Dr. Farideh Samadzadeh}{2009-2010}
@@ -114,44 +147,28 @@ Lexington, VA 24450 USA & \textit{Email}:
 \end{itemize}
 
 
-%\underline{{\large \textbf{Volunteering}}}
-%\vspace{\listAntispace}
-%\begin{itemize}
-	%\begin{itemize}
-	%	\item Built horse training equipment for the Tulsa Boys’ Home (non-profit)
-	%	\item 22.5 total hours of both planning and carrying out the project
-	%\end{itemize}
-	%\item \dated{School Service, Oklahoma School of Science and Mathematics}{2009}
-	%	\lst{Over 60 hours of aiding in the library and giving campus tours}
-	%\item \dated{Volunteer, GreenTree Assisted Living, Sand Springs, OK}{2009}
-	%	\lst{22.5 hours of assisting with the needs of senior citizens}
-	%\item \dated{Volunteer, Methodist Manor, Tulsa, OK}{2006}
-	%	\lst{40 hours of assisting with the needs of senior citizens}	
-%\end{itemize}
+\iftoggle{volunteering}{
+	\underline{{\large \textbf{Volunteering}}}
+	\vspace{\listAntispace}
+	\begin{itemize}
+		\begin{itemize}
+			\item Built horse training equipment for the Tulsa Boys’ Home (non-profit)
+			\item 22.5 total hours of both planning and carrying out the project
+		\end{itemize}
+		\item \dated{School Service, Oklahoma School of Science and Mathematics}{2009}
+			\lst{Over 60 hours of aiding in the library and giving campus tours}
+		\item \dated{Volunteer, GreenTree Assisted Living, Sand Springs, OK}{2009}
+			\lst{22.5 hours of assisting with the needs of senior citizens}
+		\item \dated{Volunteer, Methodist Manor, Tulsa, OK}{2006}
+			\lst{40 hours of assisting with the needs of senior citizens}	
+	\end{itemize}
+}{}
 
 
-\underline{{\large \textbf{Employment}}}
-\vspace{\listAntispace}
-\begin{itemize}
-	\item \dated{Interning Research Assistant at Booz Allen Hamilton}{June 2013-August 2013}
-	\item \dated{Technical specialist at the Information Technology Services HelpDesk at W\&L}{April 2012-}
-		\lst{Resolved a 2-year recurring problem with the campus's Aruba Wi-Fi network and Apple devices}
-	\item \dated{Research Assistant of Computer Science at W\&L with \href{http://cs.wlu.edu/~stough/}{Dr. Joshua Stough}}{June 2011-}
-		\lst{Developed a Condor supercomputing environment and provided support and system administration
-	%	\item Expanding the applicability of this computing system and providing support to users
-		}
-	\item \dated{Information Technology Client Services Assistant at W\&L}{September 2010-May 2011}
-		%\lst{Created \href{http://youtu.be/NvOarFOmly0?hd=1}{videos} promoting the ITS department, the university library, and the services they offer
-		%\item Digitized textbooks into a format accessible to visually-impared students on campus
-		%}
-	\item \datedTwo{Smith Brothers Abstract and Title Co.}{June 2009-August 2009}{June 2010-August 2010}
-		%\lst{Abstract Cataloger/Indexer, Storage Assistant, and Copy Analyst}
-\end{itemize}
-
-
-%\underline{{\large \textbf{Personal}}}\\
-%Hobbies include programming in Python, C, and Java, reading Sci-Fi novels, playing the bassoon, and playing minor roles in Shakespearean plays.
-
+\iftoggle{hobbies}{
+	\underline{{\large \textbf{Personal}}}\\
+	Hobbies include programming in Python, C, and Java, reading Sci-Fi novels, playing the bassoon, and playing minor roles in Shakespearean plays.
+}{}
 
 \underline{{\large \textbf{References}}}:
 Available upon request.
