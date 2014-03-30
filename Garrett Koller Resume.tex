@@ -9,12 +9,13 @@
 \usepackage{etoolbox}
 
 \newtoggle{cphs} \togglefalse{cphs}
-\newtoggle{leesummer} \togglefalse{leesummer}
-\newtoggle{leesummerdesc} \togglefalse{leesummerdesc}
+\newtoggle{leesummer} \toggletrue{leesummer}
+\newtoggle{leesummerdesc} \toggletrue{leesummerdesc}
 \newtoggle{questiefinalist} \togglefalse{questiefinalist}
 \newtoggle{qbsocial} \togglefalse{qbsocial}
 \newtoggle{volunteering} \togglefalse{volunteering}
 \newtoggle{hobbies} \togglefalse{hobbies}
+\newtoggle{references} \togglefalse{references}
 
 \hypersetup{linkbordercolor={1 1 1},citebordercolor={0 0 0},urlbordercolor={0 1 0},pdfborder={0 0 0}}
 
@@ -118,7 +119,7 @@ Lexington, VA 24450 USA & \textit{Email}:
 		\lst{Built cavalettis for a counseling center (22.5 hours of planning and action)}
 	\item \dated{Dean’s Academic Honor List at Washington \& Lee University}{2011}
 	\iftoggle{leesummer}{\item \dated{Robert E. Lee Research Scholars Program Participant}{2011}
-		\iftoggle{leesummerdesc}{\lst{Deployed a \href{http://www.condorproject.org/}{Condor} cluster on my university's campus}}{}
+		\iftoggle{leesummerdesc}{\lst{Deployed a \href{http://www.condorproject.org/}{Condor} supercomputing/HTC cluster on my university's campus}}{}
 	}{}
 	\item \dated{2nd place in the \href{https://web.chapman.edu/informationsecurityupload/contestresults.aspx}{2011 EDUCAUSE Security Awareness Video Contest}}{2011}
 	\iftoggle{questiefinalist}{\item \dated{\href{http://questbridge.org/}{QuestBridge} National College Match Scholarship Finalist}{2009}}{}
@@ -173,8 +174,10 @@ Lexington, VA 24450 USA & \textit{Email}:
 	Hobbies include programming in Python, C, and Java, reading Sci-Fi novels, playing the bassoon, and playing minor roles in Shakespearean plays.
 }{}
 
-\underline{{\large \textbf{References}}}:
-Available upon request.
+\iftoggle{references}{
+	\underline{{\large \textbf{References}}}:
+	Available upon request.
+}{} % else leave out references
 
 \end{document}
 
