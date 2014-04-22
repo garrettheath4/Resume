@@ -32,8 +32,10 @@
 \setlength{\indwidth}{\textwidth-.4in}
 \newlength{\listAntispace}
 \setlength{\listAntispace}{-.125in}
+\newlength{\subListAntispace}
+\setlength{\subListAntispace}{-.25in}
 
-\newcommand{\lst}[1]{\begin{itemize} \item #1 \end{itemize}}
+\newcommand{\lst}[1]{\vspace{\subListAntispace}\begin{itemize} \item #1 \end{itemize}}
 \newcommand{\dated}[2]{
 	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}#1 & (\textit{#2})\end{tabular*}}
 \newcommand{\datedTwo}[3]{
@@ -135,8 +137,10 @@ Lexington, VA 24450 USA & \textit{Email}:
 \vspace{\listAntispace}
 \begin{itemize}
 	\item \dated{Vice President and Secretary of the W\&L Chapter of Association for Computing Machinery}{2012-}
-	\item \dated{Vice President for Recruitment of the \href{http://www.sigep.org}{Sigma Phi Epsilon Fraternity} at W\&L}{2011-}
-	\item \dated{Treasurer of the GLBTQ Equality Initiative at W\&L and member of the \href{http://hrc.org/}{Human Rights Campaign}}{2012-}
+	\item \dated{Vice President for Recruitment of the \href{http://www.sigep.org}{Sigma Phi Epsilon Fraternity} at W\&L}{2011-2013}
+	\item \dated{Co-founder and Social Media Chair of the \href{https://www.facebook.com/groups/417758651658266/}{LGBTQA Rockbridge Alliance} community organization}{2013-2014}
+	\item \dated{Treasurer of the GLBTQ Equality Initiative at W\&L}{2012-2014}
+	\item \dated{Member of the \href{http://hrc.org/}{Human Rights Campaign}}{2012-}
 	\item \dated{Attended the \href{http://sc11.supercomputing.org/}{SC11 High Performance Computing Conference} in Seattle, WA}{2011\,\,}
 	\item \dated{IT Advisory Committee Member (Inform W\&L ITS of technology needs on campus)}{2010-}
 	\iftoggle{qbsocial}{\item \dated{Social Media Chair of the \href{http://questscholarsnetwork.org/}{Quest Scholars Network} Chapter of W\&L}{2011-}}{}
