@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  22 APR 2014 16:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  22 APR 2014 16:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -309,7 +309,7 @@ Here is how much of TeX's memory you used:
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 
-Output written on "Garrett Koller Resume.pdf" (1 page, 58025 bytes).
+Output written on "Garrett Koller Resume.pdf" (1 page, 58037 bytes).
 PDF statistics:
  48 PDF objects out of 1000 (max. 8388607)
  39 compressed objects within 1 object stream
