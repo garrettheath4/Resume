@@ -28,14 +28,13 @@
 
 \setlength{\parskip}{1cm plus1mm minus10mm}
 
-\newlength{\indwidth}
-\setlength{\indwidth}{\textwidth-.4in}
-\newlength{\listAntispace}
-\setlength{\listAntispace}{-.125in}
-\newlength{\subListAntispace}
-\setlength{\subListAntispace}{-.25in}
+\newlength{\indwidth}			\setlength{\indwidth}{\textwidth-.4in}
+\newlength{\listSpacing}			\setlength{\listSpacing}{.0375in}
+\newlength{\headerAntispace}		\setlength{\headerAntispace}{-.125in}
+\newlength{\subListAntispace}		\setlength{\subListAntispace}{-.225in}
+\newlength{\subListEndAntispace}	\setlength{\subListEndAntispace}{-.05in}
 
-\newcommand{\lst}[1]{\vspace{\subListAntispace}\begin{itemize} \item #1 \end{itemize}}
+\newcommand{\lst}[1]{\vspace{\subListAntispace}\begin{itemize} \item #1 \end{itemize}\vspace{\subListEndAntispace}}
 \newcommand{\dated}[2]{
 	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}#1 & (\textit{#2})\end{tabular*}}
 \newcommand{\datedTwo}[3]{
@@ -59,19 +58,19 @@ Lexington, VA 24450 USA & \textit{Email}:
 \vspace{5pt}
 
 \underline{{\large \textbf{Education}}}
-\vspace{\listAntispace}
+\vspace{\headerAntispace}
 \begin{itemize}
 	\item[]
 	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
 	\href{http://www.wlu.edu/}{\textbf{Washington and Lee University}}, Lexington, VA &
-	\textit{2010-Present}\\
+	(\textit{2010--Present})\\
 	B.S. Computer Science (Expected 2014) | GPA: 3.4 / Major GPA: 3.6\\
 	\end{tabular*}
 	
 	\item[]
 	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
 	\href{http://www.ossm.edu/}{\textbf{Oklahoma School of Science and Mathematics}}, Oklahoma City, OK &
-	\textit{2008-2010}\\
+	(\textit{2008--2010})\\
 	This residential charter high school intentionally omits GPAs on its transcripts.
 	\end{tabular*}
 	
@@ -79,7 +78,7 @@ Lexington, VA 24450 USA & \textit{Email}:
 		\item[]
 		\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
 		\textbf{Charles Page High School}, Sand Springs, OK (Class Rank: 1 of 402) &
-		\textit{2006-2008}
+		(\textit{2006--2008})
 		\end{tabular*}
 	} % else leave out CPHS
 	{ }
@@ -95,29 +94,31 @@ Lexington, VA 24450 USA & \textit{Email}:
 
 
 \underline{{\large \textbf{Employment}}}
-\vspace{\listAntispace}
+\vspace{\headerAntispace}
 \begin{itemize}
-	\item \dated{Interning Research Assistant at Booz Allen Hamilton}{June 2013-August 2013}
+	\setlength{\itemsep}{\listSpacing}
+	\item \dated{Interning Research Assistant at Booz Allen Hamilton}{June 2013--August 2013}
 		\lst{Engineered solution using PHP and Java to increase browser anonymity for a DIA marketing project}
-	\item \dated{Technical specialist at the Information Technology Services HelpDesk at W\&L}{April 2012-}
+	\item \dated{Technical specialist at the Information Technology Services HelpDesk at W\&L}{April 2012--}
 		\lst{Resolved a 2-year recurring problem with the campus's Aruba Wi-Fi network and Apple devices}
-	\item \dated{Research Assistant of Computer Science at W\&L with \href{http://cs.wlu.edu/~stough/}{Dr. Joshua Stough}}{June 2011-}
+	\item \dated{Research Assistant of Computer Science at W\&L with \href{http://cs.wlu.edu/~stough/}{Dr. Joshua Stough}}{June 2011--}
 		\lst{Developed a Condor supercomputing environment and provided support and system administration
 	%	\item Expanding the applicability of this computing system and providing support to users
 		}
-	\item \dated{Information Technology Client Services Assistant at W\&L}{September 2010-May 2011}
+	\item \dated{Information Technology Client Services Assistant at W\&L}{September 2010--May 2011}
 		\lst{Created \href{http://youtu.be/NvOarFOmly0?hd=1}{videos} promoting the ITS department, the university library, and the services they offer
 		%\item Digitized textbooks into a format accessible to visually-impared students on campus
 		}
-	\item \datedTwo{Smith Brothers Abstract and Title Co.}{June 2009-August 2009}{June 2010-August 2010}
+	\item \datedTwo{Smith Brothers Abstract and Title Co.}{June 2009--August 2009}{June 2010--August 2010}
 		%\lst{Abstract Cataloger/Indexer, Storage Assistant, and Copy Analyst}
 \end{itemize}
 
 
 \underline{{\large \textbf{Honors and Awards}}}
-\vspace{\listAntispace}
+\vspace{\headerAntispace}
 \begin{itemize}
-	\item \dated{\href{http://go.wlu.edu/johnson}{Johnson Scholarship} Recipient, Washington \& Lee University, Lexington, VA}{2010-2014}
+	\setlength{\itemsep}{\listSpacing}
+	\item \dated{\href{http://go.wlu.edu/johnson}{Johnson Scholarship} Recipient, Washington \& Lee University, Lexington, VA}{2010--2014}
 		\lst{\$250,000 full-ride scholarship covering tuition and room and board}
 	\item \dated{\href{http://www2.wlu.edu/x35950.xml}{Algernon Sydney Sullivan Award} nominee, Washington \& Lee University, Lexington, VA}{2014}
 	\item \dated{Eagle Scout Rank of the Boy Scouts of America}{2010}
@@ -134,25 +135,26 @@ Lexington, VA 24450 USA & \textit{Email}:
 
 
 \underline{{\large \textbf{Leadership and Activities}}}
-\vspace{\listAntispace}
+\vspace{\headerAntispace}
 \begin{itemize}
-	\item \dated{Vice President and Secretary of the W\&L Chapter of Association for Computing Machinery}{2012-}
-	\item \dated{Vice President for Recruitment of the \href{http://www.sigep.org}{Sigma Phi Epsilon Fraternity} at W\&L}{2011-2013}
-	\item \dated{Co-founder and Social Media Chair of the \href{https://www.facebook.com/groups/417758651658266/}{LGBTQA Rockbridge Alliance} community organization}{2013-2014}
-	\item \dated{Treasurer of the GLBTQ Equality Initiative at W\&L}{2012-2014}
-	\item \dated{Member of the \href{http://hrc.org/}{Human Rights Campaign}}{2012-}
-	\item \dated{Attended the \href{http://sc11.supercomputing.org/}{SC11 High Performance Computing Conference} in Seattle, WA}{2011\,\,}
-	\item \dated{IT Advisory Committee Member (Inform W\&L ITS of technology needs on campus)}{2010-}
-	\iftoggle{qbsocial}{\item \dated{Social Media Chair of the \href{http://questscholarsnetwork.org/}{Quest Scholars Network} Chapter of W\&L}{2011-}}{}
-	\item \dated{\href{http://www.youtube.com/user/WLUShakespeare/}{Actor} and Technical Assistant for the Shakespeare Society at W\&L}{2011-}
+	\setlength{\itemsep}{\listSpacing}
+	\item \dated{Vice President and Secretary of the W\&L Chapter of Association for Computing Machinery}{2012--2014}
+	\item \dated{IT Advisory Committee Member (Inform W\&L ITS of technology needs on campus)}{2010--2014}
+	\item \dated{Attended the \href{http://sc11.supercomputing.org/}{SC11 High Performance Computing Conference} in Seattle, WA}{2011}
+	\item \dated{Supercomputing and Parallel Processing Mentorship with Dr. Farideh Samadzadeh}{2009--2010}
+	\item \dated{Vice President for Recruitment of the \href{http://www.sigep.org}{Sigma Phi Epsilon Fraternity} at W\&L}{2011--2013}
+	\item \dated{Co-founder and Social Media Chair of the \href{https://www.facebook.com/groups/417758651658266/}{LGBTQA Rockbridge Alliance} community organization}{2013--2014}
+	\item \dated{Treasurer of the GLBTQ Equality Initiative at W\&L}{2012--2014}
+	\item \dated{Member of the \href{http://hrc.org/}{Human Rights Campaign}}{2012--}
+	\iftoggle{qbsocial}{\item \dated{Social Media Chair of the \href{http://questscholarsnetwork.org/}{Quest Scholars Network} Chapter of W\&L}{2011--}}{}
+	\item \dated{\href{http://www.youtube.com/user/WLUShakespeare/}{Actor} and Technical Assistant for the Shakespeare Society at W\&L}{2011--2012}
 	%\item \dated{Masonic ``Student of Today'' Leadership Award}{2006, 2007}
-	\item \dated{Supercomputing and Parallel Processing Mentorship with Dr. Farideh Samadzadeh}{2009-2010}
 	%	\lst{Implemented Dr. Farideh Samadzadeh's HPC process scheduling algorithm}
-	%\item \dated{Programming competitions}{2009-2011}
+	%\item \dated{Programming competitions}{2009--2011}
 	%	\lst{ACM Regionals, ACSL, USACO}
-	%\item \dated{Oklahoma Math League Competition Participant}{2008-2009}
+	%\item \dated{Oklahoma Math League Competition Participant}{2008--2009}
 	%\item \dated{TEAM+S Engineering Competition Team Member}{2008}
-	%\item \dated{Academic Team Member}{2007-2008}
+	%\item \dated{Academic Team Member}{2007--2008}
 	%\item \dated{Oklahoma’s Greatest Generation Project}{2007}
 	%	\lst{Created video interview of local WWII veteran’s experiences}
 \end{itemize}
@@ -160,10 +162,10 @@ Lexington, VA 24450 USA & \textit{Email}:
 
 \iftoggle{volunteering}{
 	\underline{{\large \textbf{Volunteering}}}
-	\vspace{\listAntispace}
+	\vspace{\headerAntispace}
 	\begin{itemize}
 		\begin{itemize}
-			\item Built horse training equipment for the Tulsa Boys’ Home (non-profit)
+			\item Built horse training equipment for the Tulsa Boys Home (non-profit)
 			\item 22.5 total hours of both planning and carrying out the project
 		\end{itemize}
 		\item \dated{School Service, Oklahoma School of Science and Mathematics}{2009}
