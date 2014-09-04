@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  16 JUN 2014 11:26
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  3 SEP 2014 23:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -194,27 +194,28 @@ Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
 \listSpacing=\skip47
 \headerAntispace=\skip48
 \subListAntispace=\skip49
-\subListEndAntispace=\skip50
+\subListMidAntispace=\skip50
+\subListEndAntispace=\skip51
 
 (./Garrett Koller Resume.aux)
 \openout1 = `"Garrett Koller Resume.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
 \AtBeginShipoutBox=\box26
-Package hyperref Info: Link coloring OFF on input line 43.
+Package hyperref Info: Link coloring OFF on input line 68.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -224,9 +225,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count96
 )
-LaTeX Info: Redefining \ref on input line 43.
-LaTeX Info: Redefining \pageref on input line 43.
-LaTeX Info: Redefining \nameref on input line 43.
+LaTeX Info: Redefining \ref on input line 68.
+LaTeX Info: Redefining \pageref on input line 68.
+LaTeX Info: Redefining \nameref on input line 68.
 
 (./Garrett Koller Resume.out) (./Garrett Koller Resume.out)
 \@outlinefile=\write3
@@ -262,39 +263,39 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 49.
+(Font)              <10.95> on input line 74.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 49.
+(Font)              <8> on input line 74.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 49.
+(Font)              <6> on input line 74.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 52.
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 77.
 
 
-Underfull \hbox (badness 10000) in alignment at lines 87--91
+Underfull \hbox (badness 10000) in alignment at lines 112--116
 [][]
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 100
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 125
 .
-LaTeX Font Info:    No file OMScmss.fd. on input line 100.
+LaTeX Font Info:    No file OMScmss.fd. on input line 125.
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 100.
+(Font)              for symbol `textbullet' on input line 125.
 
 Missing character: There is no Õ in font cmss10!
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 191.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 232.
 [1
 
 {/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 191.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 232.
 
 (./Garrett Koller Resume.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 191.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 191.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 232.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 232.
 Package rerunfilecheck Info: File `"Garrett Koller Resume".out' has not changed
 .
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -302,13 +303,13 @@ Package rerunfilecheck Info: File `"Garrett Koller Resume".out' has not changed
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 191.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 232.
  ) 
 Here is how much of TeX's memory you used:
- 5362 strings out of 493488
- 79049 string characters out of 3141326
- 165789 words of memory out of 3000000
- 8645 multiletter control sequences out of 15000+200000
+ 5372 strings out of 493488
+ 79200 string characters out of 3141326
+ 167520 words of memory out of 3000000
+ 8655 multiletter control sequences out of 15000+200000
  8844 words of font info for 31 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  29i,8n,23p,904b,316s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -318,7 +319,7 @@ Here is how much of TeX's memory you used:
 ></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb
 ></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 
-Output written on "Garrett Koller Resume.pdf" (1 page, 58110 bytes).
+Output written on "Garrett Koller Resume.pdf" (1 page, 58248 bytes).
 PDF statistics:
  49 PDF objects out of 1000 (max. 8388607)
  40 compressed objects within 1 object stream

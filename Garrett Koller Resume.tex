@@ -8,10 +8,13 @@
 \usepackage{calc}
 \usepackage{etoolbox}
 
+\newtoggle{targetlgbt} \togglefalse{targetlgbt}
+
 \newtoggle{cphs} \togglefalse{cphs}
 \newtoggle{leesummer} \toggletrue{leesummer}
 \newtoggle{leesummerdesc} \toggletrue{leesummerdesc}
 \newtoggle{questiefinalist} \togglefalse{questiefinalist}
+\newtoggle{ossmmentorship} \togglefalse{ossmmentorship}
 \newtoggle{qbsocial} \togglefalse{qbsocial}
 \newtoggle{volunteering} \togglefalse{volunteering}
 \newtoggle{hobbies} \togglefalse{hobbies}
@@ -31,14 +34,36 @@
 \newlength{\indwidth}			\setlength{\indwidth}{\textwidth-.4in}
 \newlength{\listSpacing}			\setlength{\listSpacing}{.0375in}
 \newlength{\headerAntispace}		\setlength{\headerAntispace}{-.125in}
-\newlength{\subListAntispace}		\setlength{\subListAntispace}{-.225in}
-\newlength{\subListEndAntispace}	\setlength{\subListEndAntispace}{-.05in}
+\newlength{\subListAntispace}		\setlength{\subListAntispace}{-.25in}
+\newlength{\subListMidAntispace}	\setlength{\subListMidAntispace}{-.055in}
+\newlength{\subListEndAntispace}	\setlength{\subListEndAntispace}{-.075in}
 
 \newcommand{\lst}[1]{\vspace{\subListAntispace}\begin{itemize} \item #1 \end{itemize}\vspace{\subListEndAntispace}}
 \newcommand{\dated}[2]{
 	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}#1 & (\textit{#2})\end{tabular*}}
 \newcommand{\datedTwo}[3]{
 	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}#1 & (\textit{#2}) (\textit{#3})\end{tabular*}}
+	
+\newcommand{\leadershipra}
+	{\item \dated{Co-founder and Social Media Chair of the
+	\href{https://www.facebook.com/groups/417758651658266/}
+	{LGBTQA Rockbridge Alliance} community organization}{2013--2014}}
+\newcommand{\leadershipgei}	
+	{\item \dated{Treasurer of the GLBTQ Equality Initiative at W\&L}{2012--2014}}
+\newcommand{\leadershiphrc}
+	{\item \dated{Member of the \href{http://hrc.org/}{Human Rights Campaign}}{2012--}}
+\newcommand{\leadershipacm}
+	{\item \dated{Vice President and Secretary of the W\&L Chapter of Association for 
+	Computing Machinery}{2012--2014}}
+\newcommand{\leadershipsigep}
+	{\item \dated{Vice President for Recruitment of the \href{http://www.sigep.org}
+	{Sigma Phi Epsilon Fraternity} at W\&L}{2011--2013}}
+\newcommand{\leadershipitac}
+	{\item \dated{IT Advisory Committee Member (Inform W\&L ITS of technology needs 
+	on campus)}{2010--2014}}
+\newcommand{\leadershipsc}
+	{\item \dated{Attended the \href{http://sc11.supercomputing.org/}
+	{SC11 High Performance Computing Conference} in Seattle, WA}{2011}}
 
 \begin{document}
 
@@ -86,7 +111,7 @@ Washington, DC  20001 USA & \textit{Email}:
 
 \begin{tabular*}{\textwidth}{ p{2.2cm} l }
 {\large \textbf{Goal:}} & High impact software engineering in the realm of high performance computing (HPC) \\
-{\large \textbf{Skills:}} & C, Python, Java, iOS Apps, UNIX, Subversion, \href{https://github.com/garrettheath4}{Git}, HPC (MPI, \href{http://condor.cs.wlu.edu}{Condor}, Hadoop, Parallel Java) \\
+{\large \textbf{Skills:}} & Java (Spring, Hibernate), C, Python, iOS Apps, UNIX, Subversion, \href{https://github.com/garrettheath4}{Git}, HPC (MPI, \href{http://condor.cs.wlu.edu}{Condor}, Hadoop) \\
 {\large \textbf{Courses:}} & Parallel Programming, Cryptography, Distributed Systems, Programming Language Design
 \end{tabular*}
 
@@ -97,6 +122,10 @@ Washington, DC  20001 USA & \textit{Email}:
 \vspace{\headerAntispace}
 \begin{itemize}
 	\setlength{\itemsep}{\listSpacing}
+	\item \dated{Software Engineer Consultant at Booz Allen Hamilton}{July 2014--}
+		\lst{C3E Project (DIA market) under Debra Owens on Kris Schroeder's Team
+		\vspace{\subListMidAntispace}
+		\item Utilizes Java Spring and Hibernate frameworks and an Oracle Database to serve a web interface frontend}
 	\item \dated{Interning Research Assistant at Booz Allen Hamilton}{June 2013--August 2013}
 		\lst{Engineered solution using PHP and Java to increase browser anonymity for a DIA marketing project}
 	\item \dated{Technical specialist at the Information Technology Services HelpDesk at W\&L}{April 2012--June 2014}
@@ -138,14 +167,26 @@ Washington, DC  20001 USA & \textit{Email}:
 \vspace{\headerAntispace}
 \begin{itemize}
 	\setlength{\itemsep}{\listSpacing}
-	\item \dated{Vice President and Secretary of the W\&L Chapter of Association for Computing Machinery}{2012--2014}
-	\item \dated{IT Advisory Committee Member (Inform W\&L ITS of technology needs on campus)}{2010--2014}
-	\item \dated{Attended the \href{http://sc11.supercomputing.org/}{SC11 High Performance Computing Conference} in Seattle, WA}{2011}
-	\item \dated{Supercomputing and Parallel Processing Mentorship with Dr. Farideh Samadzadeh}{2009--2010}
-	\item \dated{Vice President for Recruitment of the \href{http://www.sigep.org}{Sigma Phi Epsilon Fraternity} at W\&L}{2011--2013}
-	\item \dated{Co-founder and Social Media Chair of the \href{https://www.facebook.com/groups/417758651658266/}{LGBTQA Rockbridge Alliance} community organization}{2013--2014}
-	\item \dated{Treasurer of the GLBTQ Equality Initiative at W\&L}{2012--2014}
-	\item \dated{Member of the \href{http://hrc.org/}{Human Rights Campaign}}{2012--}
+	\iftoggle{targetlgbt}
+	{ % targetlgbt == true
+		\leadershipra
+		\leadershipgei
+		\leadershipsigep
+		\leadershipacm
+		\leadershiphrc
+		\leadershipitac
+		\leadershipsc
+	}
+	{ % targetlgbt == false
+		\leadershipacm
+		\leadershipitac
+		\leadershipsc
+		\leadershipsigep
+		\leadershipra
+		\leadershipgei
+		\leadershiphrc
+	}
+	\iftoggle{ossmmentorship}{\item \dated{Supercomputing and Parallel Processing Mentorship with Dr. Farideh Samadzadeh}{2009--2010}}{}
 	\iftoggle{qbsocial}{\item \dated{Social Media Chair of the \href{http://questscholarsnetwork.org/}{Quest Scholars Network} Chapter of W\&L}{2011--}}{}
 	\item \dated{\href{http://www.youtube.com/user/WLUShakespeare/}{Actor} and Technical Assistant for the Shakespeare Society at W\&L}{2011--2012}
 	%\item \dated{Masonic ``Student of Today'' Leadership Award}{2006, 2007}
