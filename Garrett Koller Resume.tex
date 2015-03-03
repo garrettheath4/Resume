@@ -43,7 +43,14 @@
 	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}#1 & (\textit{#2})\end{tabular*}}
 \newcommand{\datedTwo}[3]{
 	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}#1 & (\textit{#2}) (\textit{#3})\end{tabular*}}
-	
+
+\newcommand{\leadershipglobe}
+	{\item \dated{Secretary of GLOBE, Booz Allen Hamilton's LGBT Diversity Forum}{2014--}}	
+\newcommand{\activityhackathons}
+	{\item \dated{BAH Hackathons:}{2014--}
+		\lst{2014 Hack-A-Thon for Hope: Predicted genocide for the US Holocaust Memorial Museum
+		\item BAH PyNight (Feb 2015): 5th place out of 200 contestants in programming 
+		competition}}
 \newcommand{\leadershipra}
 	{\item \dated{Co-founder and Social Media Chair of the
 	\href{https://www.facebook.com/groups/417758651658266/}
@@ -59,7 +66,7 @@
 	{\item \dated{Vice President for Recruitment of the \href{http://www.sigep.org}
 	{Sigma Phi Epsilon Fraternity} at W\&L}{2011--2013}}
 \newcommand{\leadershipitac}
-	{\item \dated{IT Advisory Committee Member (Inform W\&L ITS of technology needs 
+	{\item \dated{W\&L IT Advisory Committee Member (informed W\&L ITS of technology needs 
 	on campus)}{2010--2014}}
 \newcommand{\leadershipsc}
 	{\item \dated{Attended the \href{http://sc11.supercomputing.org/}
@@ -96,7 +103,7 @@ Washington, DC  20001 USA & \textit{Email}:
 	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
 	\href{http://www.ossm.edu/}{\textbf{Oklahoma School of Science and Mathematics}}, Oklahoma City, OK &
 	(\textit{2008--2010})\\
-	This residential charter high school intentionally omits GPAs on its transcripts.
+	This college-preparatory residential charter high school intentionally omits GPAs on its transcripts.
 	\end{tabular*}
 	
 	\iftoggle{cphs} {
@@ -123,9 +130,9 @@ Washington, DC  20001 USA & \textit{Email}:
 \begin{itemize}
 	\setlength{\itemsep}{\listSpacing}
 	\item \dated{Software Engineer Consultant at Booz Allen Hamilton}{July 2014--}
-		\lst{C3E Project (DIA market) under Debra Owens on Kris Schroeder's Team
+		\lst{C3E Project on the BAH DIA/Military Intel team creating mission support software for DoD clients
 		\vspace{\subListMidAntispace}
-		\item Utilizes Java Spring and Hibernate frameworks and an Oracle Database to serve a web interface frontend}
+		\item Utilizes Java Spring and Hibernate frameworks and an Oracle Database to serve a web interface front-end}
 	\item \dated{Interning Research Assistant at Booz Allen Hamilton}{June 2013--August 2013}
 		\lst{Engineered solution using PHP and Java to increase browser anonymity for a DIA marketing project}
 	\item \dated{Technical specialist at the Information Technology Services HelpDesk at W\&L}{April 2012--June 2014}
@@ -169,22 +176,26 @@ Washington, DC  20001 USA & \textit{Email}:
 	\setlength{\itemsep}{\listSpacing}
 	\iftoggle{targetlgbt}
 	{ % targetlgbt == true
+		\leadershipglobe
+		\activityhackathons
 		\leadershipra
 		\leadershipgei
 		\leadershipsigep
 		\leadershipacm
 		\leadershiphrc
 		\leadershipitac
-		\leadershipsc
+		%\leadershipsc
 	}
 	{ % targetlgbt == false
+		\leadershipglobe
+		\activityhackathons
 		\leadershipacm
 		\leadershipitac
-		\leadershipsc
+		%\leadershipsc
 		\leadershipsigep
 		\leadershipra
 		\leadershipgei
-		\leadershiphrc
+		%\leadershiphrc
 	}
 	\iftoggle{ossmmentorship}{\item \dated{Supercomputing and Parallel Processing Mentorship with Dr. Farideh Samadzadeh}{2009--2010}}{}
 	\iftoggle{qbsocial}{\item \dated{Social Media Chair of the \href{http://questscholarsnetwork.org/}{Quest Scholars Network} Chapter of W\&L}{2011--}}{}
