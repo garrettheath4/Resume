@@ -16,6 +16,7 @@
 \newtoggle{questiefinalist} \togglefalse{questiefinalist}
 \newtoggle{ossmmentorship} \togglefalse{ossmmentorship}
 \newtoggle{qbsocial} \togglefalse{qbsocial}
+\newtoggle{shakespeare} \togglefalse{shakespeare}
 \newtoggle{volunteering} \togglefalse{volunteering}
 \newtoggle{hobbies} \togglefalse{hobbies}
 \newtoggle{references} \togglefalse{references}
@@ -33,7 +34,7 @@
 
 \newlength{\indwidth}			\setlength{\indwidth}{\textwidth-.4in}
 \newlength{\listSpacing}			\setlength{\listSpacing}{.0375in}
-\newlength{\headerAntispace}		\setlength{\headerAntispace}{-.125in}
+\newlength{\headerAntispace}		\setlength{\headerAntispace}{-.1in}
 \newlength{\subListAntispace}		\setlength{\subListAntispace}{-.25in}
 \newlength{\subListMidAntispace}	\setlength{\subListMidAntispace}{-.055in}
 \newlength{\subListEndAntispace}	\setlength{\subListEndAntispace}{-.075in}
@@ -45,11 +46,11 @@
 	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}#1 & (\textit{#2}) (\textit{#3})\end{tabular*}}
 
 \newcommand{\leadershipglobe}
-	{\item \dated{Secretary of GLOBE, Booz Allen Hamilton's LGBT Diversity Forum}{2014--}}	
+	{\item \dated{Secretary of GLOBE, BAH's Lesbian, Gay, Bisexual, and Transgender Diversity Forum}{2014--}}	
 \newcommand{\activityhackathons}
 	{\item \dated{BAH Hackathons:}{2014--}
-		\lst{2014 Hack-A-Thon for Hope: Predicted genocide for the US Holocaust Memorial Museum
-		\item BAH PyNight (Feb 2015): 5th place out of 200 contestants in programming 
+		\lst{2014 Hack-A-Thon for Hope: Coded to predict genocide for the US Holocaust Memorial Museum
+		\item BAH PyNight (Feb 2015): 5th place out of 200 contestants in Python programming 
 		competition}}
 \newcommand{\leadershipra}
 	{\item \dated{Co-founder and Social Media Chair of the
@@ -68,7 +69,7 @@
 \newcommand{\leadershipitac}
 	{\item \dated{W\&L IT Advisory Committee Member (informed W\&L ITS of technology needs 
 	on campus)}{2010--2014}}
-\newcommand{\leadershipsc}
+\newcommand{\leadershipscconf}
 	{\item \dated{Attended the \href{http://sc11.supercomputing.org/}
 	{SC11 High Performance Computing Conference} in Seattle, WA}{2011}}
 
@@ -184,14 +185,14 @@ Washington, DC  20001 USA & \textit{Email}:
 		\leadershipacm
 		\leadershiphrc
 		\leadershipitac
-		%\leadershipsc
+		\leadershipscconf
 	}
 	{ % targetlgbt == false
 		\leadershipglobe
 		\activityhackathons
 		\leadershipacm
 		\leadershipitac
-		%\leadershipsc
+		\leadershipscconf
 		\leadershipsigep
 		\leadershipra
 		\leadershipgei
@@ -199,7 +200,7 @@ Washington, DC  20001 USA & \textit{Email}:
 	}
 	\iftoggle{ossmmentorship}{\item \dated{Supercomputing and Parallel Processing Mentorship with Dr. Farideh Samadzadeh}{2009--2010}}{}
 	\iftoggle{qbsocial}{\item \dated{Social Media Chair of the \href{http://questscholarsnetwork.org/}{Quest Scholars Network} Chapter of W\&L}{2011--}}{}
-	\item \dated{\href{http://www.youtube.com/user/WLUShakespeare/}{Actor} and Technical Assistant for the Shakespeare Society at W\&L}{2011--2012}
+	\iftoggle{shakespeare}{\item \dated{\href{http://www.youtube.com/user/WLUShakespeare/}{Actor} and Technical Assistant for the Shakespeare Society at W\&L}{2011--2012}}{}
 	%\item \dated{Masonic ``Student of Today'' Leadership Award}{2006, 2007}
 	%	\lst{Implemented Dr. Farideh Samadzadeh's HPC process scheduling algorithm}
 	%\item \dated{Programming competitions}{2009--2011}
