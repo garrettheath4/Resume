@@ -12,6 +12,7 @@
 \newtoggle{targetlgbt} \togglefalse{targetlgbt}
 
 \newtoggle{cphs}			\togglefalse{cphs}
+\newtoggle{smithbros}		\togglefalse{smithbros}
 \newtoggle{leesummer}		\toggletrue{leesummer}
 \newtoggle{leesummerdesc}	\toggletrue{leesummerdesc}
 \newtoggle{questiefinalist}	\togglefalse{questiefinalist}
@@ -177,6 +178,7 @@ Washington, DC  20010 USA & \textit{Email}:
 \begin{itemize}
 	\setlength{\itemsep}{\listSpacing}
 	\item \dated{Software Engineer at Catalist}{September 2015--}
+		\lst{Enhanced voter information database Elasticsearch to support progressive social campaigns}
 	\item \dated{Software Engineer Consultant at Booz Allen Hamilton}{July 2014--September 2015}
 	\lst{
 		Developed mission support software for a DoD client on the C3E DIA/Military Intel team
@@ -203,9 +205,11 @@ Washington, DC  20010 USA & \textit{Email}:
 		     the university library, and the services they offer
 		%\item Digitized textbooks into a format accessible to visually-impared students on campus
 		}
-	\item \datedTwo{File Digitizer at Smith Brothers Abstract and Title Co.}
-	               {June 2009--August 2009}{June 2010--August 2010}
+	\iftoggle{smithbros}{
+		\item \datedTwo{File Digitizer at Smith Brothers Abstract and Title Co.}
+				{June 2009--August 2009}{June 2010--August 2010}
 		%\lst{Abstract Cataloger/Indexer, Storage Assistant, and Copy Analyst}
+	}{}
 \end{itemize}
 
 \vspace{\sectionSpacing}
