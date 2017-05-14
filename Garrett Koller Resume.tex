@@ -12,6 +12,7 @@
 \newtoggle{targetlgbt} \togglefalse{targetlgbt}
 
 \newtoggle{cphs}            \togglefalse{cphs}
+\newtoggle{smithbros}       \togglefalse{smithbros}
 \newtoggle{deanslist}       \togglefalse{deanslist}
 \newtoggle{leesummer}       \toggletrue{leesummer}
 \newtoggle{leesummerdesc}   \toggletrue{leesummerdesc}
@@ -65,9 +66,9 @@
 }
 
 \newcommand{\leadershipglobe}
-	{\item \dated{Secretary of GLOBE, BAH's Lesbian, Gay, Bisexual, and Transgender Employee Diversity Group}{2014--}}	
+	{\item \dated{Secretary of GLOBE, BAH's Lesbian, Gay, Bisexual, and Transgender Employee Diversity Group}{2014--2015}}	
 \newcommand{\activityhackathons}
-	{\item \dated{Hackathons hosted by Booz Allen Hamilton:}{2014--}
+	{\item \dated{Hackathons hosted by Booz Allen Hamilton:}{2014--2015}
 		\lst{PyNight (Feb 2015): 5th place out of 200 contestants in Python programming 
 		     competition
 		\vspace{\subListMidAntispace}
@@ -207,9 +208,11 @@ Washington, DC  20001 USA & \textit{Email}:
 		     the university library, and the services they offer
 		%\item Digitized textbooks into a format accessible to visually-impared students on campus
 		}
-	\item \datedTwo{File Digitizer at Smith Brothers Abstract and Title Co.}
-	               {June 2009--August 2009}{June 2010--August 2010}
+	\iftoggle{smithbros}{
+		\item \datedTwo{File Digitizer at Smith Brothers Abstract and Title Co.}
+				{June 2009--August 2009}{June 2010--August 2010}
 		%\lst{Abstract Cataloger/Indexer, Storage Assistant, and Copy Analyst}
+	}{}
 \end{itemize}
 
 \vspace{\sectionSpacing}
@@ -227,7 +230,7 @@ Washington, DC  20001 USA & \textit{Email}:
 	\item \dated{\href{http://www2.wlu.edu/x35950.xml}{Algernon Sydney Sullivan Award} nominee, Washington \& Lee University, Lexington, VA}{2014}
 	\item \dated{Eagle Scout Rank of the Boy Scouts of America}{2010}
 		\lst{Built cavalettis for a counseling center (22.5 hours of planning and action)}
-	\iftoggle{deanslist}{\item \dated{Dean's Academic Honor List at Washington \& Lee University}{2011}}
+	\iftoggle{deanslist}{\item \dated{Dean's Academic Honor List at Washington \& Lee University}{2011}}{}
 	\iftoggle{leesummer}{\item \dated{Robert E. Lee Research Scholars Program Participant}{2011}
 		\iftoggle{leesummerdesc}{\lst{Deployed a \href{http://www.htcondorproject.org/}{Condor} supercomputing/HTC cluster on my university's campus}}{}
 	}{}
