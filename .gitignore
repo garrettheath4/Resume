@@ -2,6 +2,5 @@
 *~
 *.aux
 *.synctex.gz
-Resume_Fancy.log
-Resume_Fancy.out
-Garrett Koller Resume.log
+*.log
+*.out
