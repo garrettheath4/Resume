@@ -11,8 +11,10 @@
 
 \newtoggle{targetlgbt} \togglefalse{targetlgbt}
 
-\newtoggle{cphs}            \togglefalse{cphs}
 \newtoggle{smithbros}       \togglefalse{smithbros}
+\newtoggle{gpa}             \togglefalse{gpa}
+\newtoggle{ossm}            \togglefalse{ossm}
+\newtoggle{cphs}            \togglefalse{cphs}
 \newtoggle{deanslist}       \togglefalse{deanslist}
 \newtoggle{leesummer}       \toggletrue{leesummer}
 \newtoggle{leesummerdesc}   \toggletrue{leesummerdesc}
@@ -196,17 +198,20 @@ Washington, DC  20001 USA & \textit{Email}:
 	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
 	\href{http://www.wlu.edu/}{\textbf{Washington and Lee University}}, Lexington, VA &
 	(\textit{2010--2014})\\
-	B.S. Computer Science, concentration in Music (Graduated 2014) | GPA: 3.3 / Major GPA: 3.4\\
+	B.S. Computer Science, concentration in Music (Graduated 2014) \iftoggle{gpa}{| GPA: 3.3 / Major GPA: 3.4}{}\\
 	\end{tabular*}
 
 	\vspace{-2pt}
 
-	\item[]
-	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
-	\href{http://www.ossm.edu/}{\textbf{Oklahoma School of Science and Mathematics}}, Oklahoma City, OK &
-	(\textit{2008--2010})\\
-	This college-preparatory residential charter high school intentionally omits GPAs on its transcripts.
-	\end{tabular*}
+	\iftoggle{ossm} {
+		\item[]
+		\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
+		\href{http://www.ossm.edu/}{\textbf{Oklahoma School of Science and Mathematics}}, Oklahoma City, OK &
+		(\textit{2008--2010})\\
+		\iftoggle{gpa}{This college-preparatory residential charter high school intentionally omits GPAs on its transcripts.}{}
+		\end{tabular*}
+	} % else leave out OSSM
+	{ }
 
 	\iftoggle{cphs} {
 		\item[]
