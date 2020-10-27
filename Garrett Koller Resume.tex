@@ -27,7 +27,12 @@
 \newtoggle{hobbies}         \togglefalse{hobbies}
 \newtoggle{references}      \togglefalse{references}
 
-\hypersetup{linkbordercolor={1 1 1},citebordercolor={0 0 0},urlbordercolor={0 1 0},pdfborder={0 0 0}}
+\hypersetup{
+	linkbordercolor={1 1 1},
+	citebordercolor={0 0 0},
+	urlbordercolor={0 1 0},
+	pdfborder={0 0 0}
+}
 
 \textheight=10in \pagestyle{empty} \raggedbottom \raggedright
 \setlength{\tabcolsep}{0in} \setlength{\columnwidth}{.5\textwidth}
@@ -40,78 +45,121 @@
 
 \setlength{\parskip}{1cm plus1mm minus10mm}
 
-\newlength{\indwidth}				\setlength{\indwidth}{\textwidth-.4in}
-\newlength{\listSpacing}			\setlength{\listSpacing}{.0375in}
-\newlength{\firstSectionSpacing}	\setlength{\firstSectionSpacing}{6pt}
-\newlength{\sectionSpacing}			\setlength{\sectionSpacing}{-1pt}
-\newlength{\headerAntispace}		\setlength{\headerAntispace}{-6pt}
-\newlength{\subListAntispace}		\setlength{\subListAntispace}{-.25in}
-\newlength{\subListMidAntispace}	\setlength{\subListMidAntispace}{-2.5pt}
-\newlength{\subListEndAntispace}	\setlength{\subListEndAntispace}{-.075in}
+\newlength{\indwidth}            \setlength{\indwidth}{\textwidth-.4in}
+\newlength{\listSpacing}         \setlength{\listSpacing}{.0375in}
+\newlength{\firstSectionSpacing} \setlength{\firstSectionSpacing}{6pt}
+\newlength{\sectionSpacing}      \setlength{\sectionSpacing}{-1pt}
+\newlength{\headerAntispace}     \setlength{\headerAntispace}{-6pt}
+\newlength{\subListAntispace}    \setlength{\subListAntispace}{-.25in}
+\newlength{\subListMidAntispace} \setlength{\subListMidAntispace}{-2.5pt}
+\newlength{\subListEndAntispace} \setlength{\subListEndAntispace}{-.075in}
 
-\newcommand{\lst}[1]{\vspace{\subListAntispace}\begin{itemize} \item #1 \end{itemize}\vspace{\subListEndAntispace}}
+\newcommand{\lst}[1]{
+	\vspace{\subListAntispace}
+	\begin{itemize}
+		\item #1
+	\end{itemize}
+	\vspace{\subListEndAntispace}
+}
 \newcommand{\dated}[2]{
-	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}#1 & (\textit{#2})\end{tabular*}}
+	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
+		#1 & (\textit{#2})
+	\end{tabular*}
+}
 \newcommand{\datedTwo}[3]{
-	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}#1 & (\textit{#2}) (\textit{#3})\end{tabular*}}
+	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
+		#1 & (\textit{#2}) (\textit{#3})
+	\end{tabular*}
+}
 
-\newcommand \myul[3]{%
-	\begingroup%
-	\renewcommand \ULdepth {#1}%
-	\renewcommand \ULthickness {#2}%
-	\uline{#3}%
-	\endgroup%
+\newcommand \myul[3]{
+	\begingroup
+	\renewcommand \ULdepth {#1}
+	\renewcommand \ULthickness {#2}
+	\uline{#3}
+	\endgroup
 }
 
 \newcommand \sectionheader[1]{
 	\myul{2.7pt}{0.5pt}{\large \textbf{#1}}
 }
 
-\newcommand{\leadershipglobe}
-	{\item \dated{Secretary of GLOBE: BAH's Lesbian, Gay, Bisexual, and Transgender Employee Diversity Group}{2014--2015}}
-\newcommand{\activityhackathons}
-	{\item \dated{Hackathons hosted by Booz Allen Hamilton:}{2014--2015}
-		\lst{PyNight (Feb 2015): 5th place out of 200 contestants in Python programming 
-		     competition
+\newcommand{\leadershipglobe}{
+	\item \dated{
+		Secretary of GLOBE: BAH's Lesbian, Gay, Bisexual, and Transgender Employee
+		Diversity Group
+	}{2014--2015}
+}
+\newcommand{\activityhackathons}{
+	\item \dated{Hackathons hosted by Booz Allen Hamilton:}{2014--2015}
+	\lst{
+		PyNight (Feb 2015): 5th place out of 200 contestants in Python programming
+		competition
 		\vspace{\subListMidAntispace}
-		\item Hack-A-Thon for Hope (2014): Created model to predict genocide for the
-		      Holocaust Memorial Museum}}
-\newcommand{\leadershipra}
-	{\item \dated{Co-founder and Social Media Chair of the
-	              \href{https://www.facebook.com/groups/417758651658266/}
-	              {LGBTQA Rockbridge Alliance} community organization}{2013--2014}}
-\newcommand{\leadershipgei}	
-	{\item \dated{Treasurer of the GLBTQ Equality Initiative at W\&L}{2012--2014}}
-\newcommand{\leadershiphrc}
-	{\item \dated{Member of the \href{http://hrc.org/}{Human Rights Campaign}}{2012--}}
-\newcommand{\leadershipacm}
-	{\item \dated{Vice President and Secretary of the W\&L Chapter of Association for 
-	Computing Machinery}{2012--2014}}
-\newcommand{\leadershipsigep}
-	{\item \dated{Vice President for Recruitment of the
-	              \href{http://www.sigep.org}{Sigma Phi Epsilon Fraternity} at W\&L}{2011--2013}}
-\newcommand{\leadershipitac}
-	{\item \dated{W\&L IT Advisory Committee Member (informed W\&L ITS of technology needs 
-	              on campus)}{2010--2014}}
-\newcommand{\leadershipscconf}
-	{\item \dated{Attended the
-	              \href{http://sc11.supercomputing.org/}{SC11 High Performance Computing Conference}
-	              in Seattle, WA}{2011}}
+	\item {
+		Hack-A-Thon for Hope (2014): Created model to predict genocide for the
+		Holocaust Memorial Museum
+	}}
+}
+\newcommand{\leadershipra}{
+	\item \dated{
+		Co-founder and Social Media Chair of the
+		\href{https://www.facebook.com/groups/417758651658266/}
+		{LGBTQA Rockbridge Alliance} community organization
+	}{2013--2014}
+}
+\newcommand{\leadershipgei}{
+	\item \dated{
+		Treasurer of the GLBTQ Equality Initiative at W\&L
+	}{2012--2014}
+}
+\newcommand{\leadershiphrc}{
+	\item \dated{
+		Member of the \href{http://hrc.org/}{Human Rights Campaign}
+	}{2012--}
+}
+\newcommand{\leadershipacm}{
+	\item \dated{
+		Vice President and Secretary of the W\&L Chapter of Association for Computing
+		Machinery
+	}{2012--2014}
+}
+\newcommand{\leadershipsigep}{
+	\item \dated{
+		Vice President for Recruitment of the
+		\href{http://www.sigep.org}{Sigma Phi Epsilon Fraternity} at W\&L
+	}{2011--2013}
+}
+\newcommand{\leadershipitac}{
+	\item \dated{
+		W\&L IT Advisory Committee Member (informed W\&L ITS of technology needs on
+		campus)
+	}{2010--2014}
+}
+\newcommand{\leadershipscconf}{
+	\item \dated{
+		Attended the
+		\href{http://sc11.supercomputing.org/}
+		{SC11 High Performance Computing Conference}
+		in Seattle, WA
+	}{2011}
+}
 
 \begin{document}
 
 % Set font
 \sffamily
 
-\begin{center}
-\underline{\Large{\textbf{Garrett Heath Koller}}}
-\end{center}
+\begin{center}{
+	\underline{\Large{\textbf{Garrett Heath Koller}}}
+}\end{center}
 \vspace{-8pt}
+
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-1011 4th Street NW, Apt 312 & \textit{Cell Phone}: (918) 439-6362 \\
-Washington, DC  20001 USA & \textit{Email}:
-\href{mailto:garrettheath4@gmail.com}{garrettheath4@gmail.com} \\
-\hline
+	3517 13th Street NW, Unit 101 & \textit{Cell Phone}: (918) 439-6362 \\
+	Washington, DC  20010 USA & \textit{Email}:
+	\href{mailto:garrettheath4@gmail.com}{garrettheath4@gmail.com} \\
+	\hline
 \end{tabular*}
 
 \vspace{\firstSectionSpacing}
@@ -122,17 +170,20 @@ Washington, DC  20001 USA & \textit{Email}:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{tabular*}{\textwidth}{ p{2.2cm} l }
-{\large \textbf{Goal:}}      & High impact software engineering in the realm of 
-                               high performance computing (supercomputing) \\
-{\large \textbf{Skills:}}    & Java (Eclipse, Spring, Hibernate, Tomcat), Scala, Python, C,
-                               iOS Apps, Web Apps (React, ES6), \\
-                             & APIs (Swagger), Databases (Oracle), UNIX admin, 
-                               \href{https://github.com/garrettheath4}{Git},
-                               Supercomputing (MPI, \href{http://www.htcondorproject.org/}{Condor},
-                               Hadoop) \\
-{\large \textbf{Clearance:}} & Top Secret SCI (CI Poly: August 11, 2015.  /  SCI DIA INDOC: August 13, 2015.) while at Booz Allen \\
-{\large \textbf{Courses:}}   & User Experience Design, Parallel Programming,
-                               Cryptography, Programming Language Design
+	{large \textbf{Goal:}}       & High impact software engineering in the realm of
+	                               high performance computing (supercomputing) \\
+	{\large \textbf{Skills:}}    & Java (Eclipse, Spring, Hibernate, Tomcat), Scala,
+	                               Python, C, iOS Apps, Web Apps (React, ES6), \\
+	                             & APIs (Swagger), Databases (Oracle), UNIX admin,
+	                               \href{https://github.com/garrettheath4}{Git},
+	                               Supercomputing (MPI,
+	                               \href{http://www.htcondorproject.org/}{Condor},
+	                               Hadoop) \\
+	{\large \textbf{Clearance:}} & Top Secret SCI (CI Poly: August 11, 2015.  /  %
+	                               SCI DIA INDOC: August 13, 2015.) while at Booz
+	                               Allen \\
+	{\large \textbf{Courses:}}   & User Experience Design, Parallel Programming,
+	                               Cryptography, Programming Language Design
 \end{tabular*}
 
 \vspace{\firstSectionSpacing}
@@ -145,43 +196,67 @@ Washington, DC  20001 USA & \textit{Email}:
 
 \sectionheader{Employment}
 \vspace{\headerAntispace}
-\begin{itemize}
+\begin{itemize}{
 	\setlength{\itemsep}{\listSpacing}
 	\item \dated{Software Engineer at Catalist, LLC}{September 2015--Present}
 	\lst{
-		Developed and managed well-documented APIs using Scala, Java, and Tomcat to integrate with clients
+		Developed and managed well-documented APIs using Scala, Java, and Tomcat to
+		integrate with clients
 	}
-	\item \dated{Software Engineer Consultant at Booz Allen Hamilton}{July 2014--September 2015}
+	\item \dated{
+		Software Engineer Consultant at Booz Allen Hamilton
+	}{July 2014--September 2015}
 	\lst{
-		Developed mission support software for a DoD client on the C3E DIA/Military Intel team
-		\vspace{\subListMidAntispace}
-		\item Utilized Java Spring and Hibernate frameworks and an Oracle Database to serve a web
-		      interface front-end
-		\vspace{\subListMidAntispace}
-		%\item Designed and implemented multi-language web-based front-end using JSP and JQuery
+		Developed mission support software for a DoD client on the C3E DIA/Military
+		Intel team
+	\vspace{\subListMidAntispace}
+	\item {
+		Utilized Java Spring and Hibernate frameworks and an Oracle Database to serve
+		a web interface front-end
 	}
-	\item \dated{Interning Research Assistant at Booz Allen Hamilton}{June 2013--August 2013}
-		\lst{Engineered solution using PHP and Java to increase browser anonymity for a DIA
-		     marketing project}
-	\item \dated{Technical Specialist at the Information Technology Services HelpDesk at W\&L}
-	            {April 2012--June 2014}
-		\lst{Resolved a 2-year-long recurring problem with the campus's Aruba Wi-Fi network and Apple devices}
-	\item \dated{Research Assistant of Computer Science at W\&L with Dr. Joshua Stough}
-	            {June 2011--May 2014}
-		\lst{Developed a \href{http://www.htcondorproject.org/}{Condor} supercomputing environment and provided support and system administration
-		%\item Expanding the applicability of this computing system and providing support to users
-		}
-	\item \dated{Information Technology Client Services Assistant at W\&L}{September 2010--May 2011}
-		\lst{Created \href{http://youtu.be/NvOarFOmly0?hd=1}{videos} promoting the ITS department,
-		     the university library, and the services they offer
-		%\item Digitized textbooks into a format accessible to visually-impared students on campus
-		}
+	\vspace{\subListMidAntispace}
+	%\item Designed and implemented multi-language web-based front-end using JSP
+	% and JQuery
+	}
+	\item \dated{
+		Interning Research Assistant at Booz Allen Hamilton
+	}{June 2013--August 2013}
+	\lst{
+		Engineered solution using PHP and Java to increase browser anonymity for a DIA
+		marketing project
+	}
+	\item \dated{
+		Technical Specialist at the Information Technology Services HelpDesk at W\&L
+	}{April 2012--June 2014}
+	\lst{
+		Resolved a 2-year-long recurring problem with the campus's Aruba Wi-Fi network
+		and Apple devices
+	}
+	\item \dated{
+		Research Assistant of Computer Science at W\&L with Dr. Joshua Stough
+	}{June 2011--May 2014}
+	\lst{
+		Developed a \href{http://www.htcondorproject.org/}{Condor} supercomputing
+		environment and provided support and system administration
+		%\item Expanding the applicability of this computing system and providing
+		%support to users
+	}
+	\item \dated{
+		Information Technology Client Services Assistant at W\&L
+	}{September 2010--May 2011}
+	\lst{
+		Created \href{http://youtu.be/NvOarFOmly0?hd=1}{videos} promoting the ITS
+		department, the university library, and the services they offer
+		%\item Digitized textbooks into a format accessible to visually-impared
+		%students on campus
+	}
 	\iftoggle{smithbros}{
-		\item \datedTwo{File Digitizer at Smith Brothers Abstract and Title Co.}
-				{June 2009--August 2009}{June 2010--August 2010}
+		\item \datedTwo{
+			File Digitizer at Smith Brothers Abstract and Title Co.
+		}{June 2009--August 2009}{June 2010--August 2010}
 		%\lst{Abstract Cataloger/Indexer, Storage Assistant, and Copy Analyst}
 	}{}
-\end{itemize}
+}\end{itemize}
 
 \vspace{\sectionSpacing}
 
@@ -192,12 +267,12 @@ Washington, DC  20001 USA & \textit{Email}:
 
 \sectionheader{Education}
 \vspace{\headerAntispace}
-\begin{itemize}
+\begin{itemize}{
 	\item[]
 	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
-	\href{https://generalassemb.ly/}{\textbf{General Assembly}}, Washington, DC &
-	(\textit{Sep 2017--Dec 2017})\\
-	\href{https://generalassemb.ly/education/user-experience-design}{User Experience Design} course (part-time, on-campus)\\
+		\href{https://generalassemb.ly/}{\textbf{General Assembly}}, Washington, DC &
+		(\textit{Sep 2017--Dec 2017}) \\
+		\href{https://generalassemb.ly/education/user-experience-design}{User Experience Design} course (part-time, on-campus)\\
 	\end{tabular*}
 
 	\item[]
@@ -227,7 +302,7 @@ Washington, DC  20001 USA & \textit{Email}:
 		\end{tabular*}
 	} % else leave out CPHS
 	{ }
-\end{itemize}
+}\end{itemize}
 
 \vspace{\sectionSpacing}
 
@@ -319,7 +394,7 @@ Washington, DC  20001 USA & \textit{Email}:
 		\item \dated{Volunteer, GreenTree Assisted Living, Sand Springs, OK}{2009}
 			\lst{22.5 hours of assisting with the needs of senior citizens}
 		\item \dated{Volunteer, Methodist Manor, Tulsa, OK}{2006}
-			\lst{40 hours of assisting with the needs of senior citizens}	
+			\lst{40 hours of assisting with the needs of senior citizens}
 	\end{itemize}
 }{}
 
