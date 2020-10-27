@@ -74,9 +74,9 @@
 
 \newcommand \myul[3]{
 	\begingroup
-	\renewcommand \ULdepth {#1}
-	\renewcommand \ULthickness {#2}
-	\uline{#3}
+		\renewcommand \ULdepth {#1}
+		\renewcommand \ULthickness {#2}
+		\uline{#3}
 	\endgroup
 }
 
@@ -172,9 +172,11 @@
 \begin{tabular*}{\textwidth}{ p{2.2cm} l }
 	{\large \textbf{Goal:}}      & High impact software engineering in the realm of
 	                               high performance computing (supercomputing) \\
-	{\large \textbf{Skills:}}    & Java (Eclipse, Spring, Hibernate, Tomcat), Scala,
-	                               Python, C, iOS Apps, Web Apps (React, ES6), \\
-	                             & APIs (Swagger), Databases (Oracle), UNIX admin,
+	{\large \textbf{Skills:}}    & Java (EE, Tomcat, HK2, Guice), Scala, Web Apps
+	                               (React, JavaScript, TypeScript, ES6), Python, C,
+	                               \\
+	                             & iOS, APIs (Swagger), Databases (PostgreSQL),
+	                               UNIX,
 	                               \href{https://github.com/garrettheath4}{Git},
 	                               Supercomputing (MPI,
 	                               \href{http://www.htcondorproject.org/}{Condor},
@@ -272,14 +274,16 @@
 	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
 		\href{https://generalassemb.ly/}{\textbf{General Assembly}}, Washington, DC &
 		(\textit{Sep 2017--Dec 2017}) \\
-		\href{https://generalassemb.ly/education/user-experience-design}{User Experience Design} course (part-time, on-campus)\\
+		\href{https://generalassemb.ly/education/user-experience-design}
+		{User Experience Design} course (part-time, on-campus)\\
 	\end{tabular*}
 
 	\item[]
 	\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
-	\href{http://www.wlu.edu/}{\textbf{Washington and Lee University}}, Lexington, VA &
-	(\textit{2010--2014})\\
-	B.S. Computer Science, concentration in Music (Graduated 2014) \iftoggle{gpa}{| GPA: 3.3 / Major GPA: 3.4}{}\\
+		\href{http://www.wlu.edu/}{\textbf{Washington and Lee University}}, Lexington,
+		VA & (\textit{2010--2014}) \\
+		B.S. Computer Science, concentration in Music (Graduated 2014)
+		\iftoggle{gpa}{| GPA: 3.3 / Major GPA: 3.4}{}\\
 	\end{tabular*}
 
 	\vspace{-2pt}
@@ -287,9 +291,11 @@
 	\iftoggle{ossm} {
 		\item[]
 		\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
-		\href{http://www.ossm.edu/}{\textbf{Oklahoma School of Science and Mathematics}}, Oklahoma City, OK &
-		(\textit{2008--2010})\\
-		\iftoggle{gpa}{This college-preparatory residential charter high school intentionally omits GPAs on its transcripts.}{}
+			\href{http://www.ossm.edu/}
+			{\textbf{Oklahoma School of Science and Mathematics}}, Oklahoma City, OK &
+			(\textit{2008--2010})\\
+			\iftoggle{gpa}{This college-preparatory residential charter high school
+			intentionally omits GPAs on its transcripts.}{}
 		\end{tabular*}
 	} % else leave out OSSM
 	{ }
@@ -297,8 +303,8 @@
 	\iftoggle{cphs} {
 		\item[]
 		\begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
-		\textbf{Charles Page High School}, Sand Springs, OK (Class Rank: 1 of 402) &
-		(\textit{2006--2008})
+			\textbf{Charles Page High School}, Sand Springs, OK (Class Rank: 1 of 402) &
+			(\textit{2006--2008})
 		\end{tabular*}
 	} % else leave out CPHS
 	{ }
@@ -314,18 +320,41 @@
 \vspace{\headerAntispace}
 \begin{itemize}
 	\setlength{\itemsep}{\listSpacing}
-	\item \dated{\href{http://go.wlu.edu/johnson}{Johnson Scholarship} Recipient, Washington \& Lee University, Lexington, VA}{2010--2014}
-		\lst{\$250,000 full-ride scholarship covering tuition and room and board}
-	\item \dated{\href{https://www.wlu.edu/university-registrar/policies-and-procedures/university-honors-board/sullivan-award}{Algernon Sydney Sullivan Award} nominee, Washington \& Lee University, Lexington, VA}{2014}
+	\item \dated{\href{http://go.wlu.edu/johnson}{Johnson Scholarship} Recipient,
+	Washington \& Lee University, Lexington, VA}{2010--2014}
+	\lst{
+		\$250,000 full-ride scholarship covering tuition and room and board
+	}
+	\item \dated{
+		\href{https://www.wlu.edu/university-registrar/policies-and-procedures/university-honors-board/sullivan-award}
+		{Algernon Sydney Sullivan Award} nominee, Washington \& Lee University,
+		Lexington, VA
+	}{2014}
 	\item \dated{Eagle Scout Rank of the Boy Scouts of America}{2010}
-		\lst{Built cavalettis for a counseling center (22.5 hours of planning and action)}
-	\iftoggle{deanslist}{\item \dated{Dean's Academic Honor List at Washington \& Lee University}{2011}}{}
-	\iftoggle{leesummer}{\item \dated{Robert E. Lee Research Scholars Program Participant}{2011}
-		\iftoggle{leesummerdesc}{\lst{Deployed a \href{http://www.htcondorproject.org/}{Condor} supercomputing/HTC cluster on my university's campus}}{}
+	\lst{
+		Built cavalettis for a counseling center (22.5 hours of planning and action)
+	}
+	\iftoggle{deanslist}{\item \dated{Dean's Academic Honor List at Washington \&
+		Lee University}{2011}}{}
+	\iftoggle{leesummer}{\item \dated{Robert E. Lee Research Scholars Program
+		Participant}{2011}
+		\iftoggle{leesummerdesc}{\lst{
+			Deployed a \href{http://www.htcondorproject.org/}{Condor} supercomputing/HTC
+			cluster on my university's campus
+		}}{}
 	}{}
-	\item \dated{2nd place in the \href{https://library.educause.edu/resources/2006/1/information-security-awareness-video-and-poster-contest-winners}{2011 EDUCAUSE Security Awareness Video Contest}}{2011}
-	\iftoggle{questiefinalist}{\item \dated{\href{https://www.questbridge.org/}{QuestBridge} National College Match Scholarship Finalist}{2009}}{\vspace{-7pt}}
-	\iftoggle{ossmscholar}{\item \dated{OSSM Computer Science Scholar Award}{2009}}{\vspace{-7pt}}
+	\item \dated{
+		2nd place in the
+		\href{https://library.educause.edu/resources/2006/1/information-security-awareness-video-and-poster-contest-winners}
+		{2011 EDUCAUSE Security Awareness Video Contest}
+	}{2011}
+	\iftoggle{questiefinalist}{\item \dated{
+		\href{https://www.questbridge.org/}{QuestBridge} National College Match
+		Scholarship Finalist
+	}{2009}}{\vspace{-7pt}}
+	\iftoggle{ossmscholar}{\item \dated{
+		OSSM Computer Science Scholar Award
+	}{2009}}{\vspace{-7pt}}
 	%\item \dated{National Honor Society}{2008}
 \end{itemize}
 
@@ -363,9 +392,17 @@
 		\leadershipgei
 		%\leadershiphrc
 	}
-	\iftoggle{ossmmentorship}{\item \dated{Supercomputing and Parallel Processing Mentorship with Dr. Farideh Samadzadeh}{2009--2010}}{\vspace{-3pt}}
-	\iftoggle{qbsocial}{\item \dated{Social Media Chair of the \href{https://www.questbridge.org/scholars}{Quest Scholars Network} Chapter of W\&L}{2011--}}{\vspace{-3pt}}
-	\iftoggle{shakespeare}{\item \dated{\href{http://www.youtube.com/user/WLUShakespeare/}{Actor} and Technical Assistant for the Shakespeare Society at W\&L}{2011--2012}}{\vspace{-3pt}}
+	\iftoggle{ossmmentorship}{\item \dated{
+		Supercomputing and Parallel Processing Mentorship with Dr. Farideh Samadzadeh
+	}{2009--2010}}{\vspace{-3pt}}
+	\iftoggle{qbsocial}{\item \dated{
+		Social Media Chair of the \href{https://www.questbridge.org/scholars}
+		{Quest Scholars Network} Chapter of W\&L
+	}{2011--}}{\vspace{-3pt}}
+	\iftoggle{shakespeare}{\item \dated{
+		\href{http://www.youtube.com/user/WLUShakespeare/}{Actor} and Technical
+		Assistant for the Shakespeare Society at W\&L
+	}{2011--2012}}{\vspace{-3pt}}
 	%\item \dated{Masonic ``Student of Today'' Leadership Award}{2006, 2007}
 	%	\lst{Implemented Dr. Farideh Samadzadeh's HPC process scheduling algorithm}
 	%\item \dated{Programming competitions}{2009--2011}
@@ -401,7 +438,8 @@
 
 \iftoggle{hobbies}{
 	\sectionheader{Personal}\\
-	Hobbies include programming in Python, C, and Java, reading Sci-Fi novels, playing the bassoon, and playing minor roles in Shakespearean plays.
+	Hobbies include programming in Python, C, and Java, reading Sci-Fi novels,
+	playing the bassoon, and playing minor roles in Shakespearean plays.
 }{}
 
 \iftoggle{references}{
@@ -412,13 +450,4 @@
 \vspace{-10pt}
 
 \end{document}
-
-
-
-
-
-
-
-
-
 
