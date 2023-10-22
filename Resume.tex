@@ -155,9 +155,10 @@
 \vspace{-8pt}
 
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-	3517 13th Street NW, Unit 101 & \textit{Cell Phone}: (918) 439-6362 \\
-	Washington, DC  20010 USA & \textit{Email}:
-	\href{mailto:garrettheath4@gmail.com}{garrettheath4@gmail.com} \\
+	\IfFileExists{./secret_street.txt}{\input{./secret_street.txt}}{\textit{(full address available upon request)}}
+	& Cell Phone: \IfFileExists{./secret_phone.txt}{\input{./secret_phone.txt}}{\textit{(available upon request)}} \\
+	Washington, DC  20009 USA
+	& Email: \IfFileExists{./secret_email.txt}{\input{./secret_email.txt}}{chakra-angle0l@icloud.com} \\
 	\hline
 \end{tabular*}
 
@@ -171,8 +172,8 @@
 \begin{tabular*}{\textwidth}{ p{2.2cm} l }
 	{\large \textbf{Goal:}}      & High impact software engineering in the realm of
 	                               high performance computing (supercomputing) \\
-	{\large \textbf{Skills:}}    & Java (EE, Tomcat, HK2, Guice), Scala, Web Apps
-	                               (JavaScript, TypeScript, React), Python, Ruby, C,
+	{\large \textbf{Skills:}}    & Python, Java (EE, Tomcat, HK2, Guice), Scala, Web Apps
+	                               (JavaScript, TypeScript, React), Ruby, C,
 	                               \\
 	                             & APIs (Swagger), Databases (PostgreSQL), iOS,
 	                               UNIX,
