@@ -59,7 +59,7 @@
 \newlength{\subListEndAntispace} \setlength{\subListEndAntispace}{-.075in}
 \newlength{\subListDNEAntispace} \setlength{\subListDNEAntispace}{-7pt}
 
-\newcommand{\lst}[1]{
+\newcommand{\sublist}[1]{
     \vspace{\subListAntispace}
     \begin{itemize}
         \item #1
@@ -103,7 +103,7 @@
 }
 \newcommand{\activityhackathons}{
     \item \dated{Hackathons hosted by Booz Allen Hamilton:}{2014--2015}
-    \lst{
+    \sublist{
         PyNight (Feb 2015): 5th place out of 200 contestants in Python programming competition
         \vspace{\subListMidAntispace}
         \item {
@@ -241,7 +241,7 @@
     \setlength{\itemsep}{\listSpacing}
     \item
         \dated{Senior Software Engineer at \href{https://catalist.us/}{Catalist, LLC}}{September 2015--Present}
-        \lst{%
+        \sublist{%
             Developed and managed multiple full-stack apps and APIs using Java, TypeScript, and React
             \vspace{\subListMidAntispace}
             \item {Architected and implemented CI/CD pipeline, including Dockerized unit tests and Blue/Green
@@ -251,7 +251,7 @@
         }
     \item
         \dated{Software Engineer Consultant at \BAHlink{}}{July 2014--September 2015}
-        \lst{%
+        \sublist{%
             Developed mission support software for a DoD client on the C3E DIA/Military Intel team
             \vspace{\subListMidAntispace}
             \item {%
@@ -263,19 +263,19 @@
         }
     \item
         \dated{Interning Research Assistant at \BAHlink{}}{June 2013--August 2013}
-        \lst{Engineered solution using PHP and Java to increase browser anonymity for a DIA marketing project}
+        \sublist{Engineered solution using PHP and Java to increase browser anonymity for a DIA marketing project}
     \item
         \dated{Technical Specialist at the Information Technology Services HelpDesk at W\&L}{April 2012--June 2014}
-        \lst{Resolved a 2-year-long recurring problem with the campus's Aruba Wi-Fi network and Apple devices}
+        \sublist{Resolved a 2-year-long recurring problem with the campus's Aruba Wi-Fi network and Apple devices}
     \item
         \dated{Research Assistant of Computer Science at W\&L with Dr.\ Joshua Stough}{June 2011--May 2014}
-        \lst{%
+        \sublist{%
             Developed an \HTCondor{} supercomputing environment and provided support and system administration
             %\item Expanding the applicability of this computing system and providing support to users
         }
     \item
         \dated{Information Technology Client Services Assistant at W\&L}{September 2010--May 2011}
-        \lst{%
+        \sublist{%
             Created \href{https://youtu.be/NvOarFOmly0}{videos} promoting the ITS department, the  university library,
             and the services they offer
             %\item Digitized textbooks into a format accessible to visually-impared students on campus
@@ -285,7 +285,7 @@
             \datedTwo{%
                 File Digitizer at Smith Brothers Abstract and Title Co.
             }{June 2009--August 2009}{June 2010--August 2010}
-            %\lst{Abstract Cataloger/Indexer, Storage Assistant, and Copy Analyst}
+            %\sublist{Abstract Cataloger/Indexer, Storage Assistant, and Copy Analyst}
     }{}
 }\end{itemize}
 
@@ -305,7 +305,7 @@
             \href{https://go.wlu.edu/johnson}{Johnson Scholarship} Recipient, Washington \& Lee University, Lexington,
             VA
         }{2010--2014}
-        \lst{\$250,000 full-ride merit-based scholarship covering tuition and room and board}
+        \sublist{\$250,000 full-ride merit-based scholarship covering tuition and room and board}
     \item
         \dated{%
             \href{https://my.wlu.edu/university-registrar/our-services/university-honors-board/algernon-sydney-sullivan-award}
@@ -313,10 +313,10 @@
         }{2014}
     \item
         \dated{Eagle Scout Rank of the Boy Scouts of America}{2010}
-        \lst{Built equestrian training equipment for a counseling center (22.5 hours of planning and action)}
+        \sublist{Built equestrian training equipment for a counseling center (22.5 hours of planning and action)}
     \iftoggle{deanslist}{\item \dated{Dean's Academic Honor List at Washington \& Lee University}{2011}}{}
     \iftoggle{leesummer}{\item \dated{Robert E. Lee Research Scholars Program Participant}{2011}
-        \iftoggle{leesummerdesc}{\lst{
+        \iftoggle{leesummerdesc}{\sublist{%
             Deployed and managed an \HTCondor{} supercomputing/\HTC{} cluster on university campus
         }}{\vspace{\subListDNEAntispace+\subListDNEAntispace}}
     }{}
@@ -373,14 +373,14 @@
         W\&L
     }{2011--2012}}{\vspace{-3pt}}
     %\item \dated{Masonic ``Student of Today'' Leadership Award}{2006, 2007}
-    %    \lst{Implemented Dr. Farideh Samadzadeh's HPC process scheduling algorithm}
+    %    \sublist{Implemented Dr. Farideh Samadzadeh's HPC process scheduling algorithm}
     %\item \dated{Programming competitions}{2009--2011}
-    %    \lst{ACM Regionals, ACSL, USACO}
+    %    \sublist{ACM Regionals, ACSL, USACO}
     %\item \dated{Oklahoma Math League Competition Participant}{2008--2009}
     %\item \dated{TEAM+S Engineering Competition Team Member}{2008}
     %\item \dated{Academic Team Member}{2007--2008}
     %\item \dated{Oklahoma's Greatest Generation Project}{2007}
-    %    \lst{Created video interview of local WWII veteran's experiences}
+    %    \sublist{Created video interview of local WWII veteran's experiences}
 \end{itemize}
 
 
@@ -397,11 +397,11 @@
             \item 22.5 total hours of both planning and carrying out the project
         \end{itemize}
         \item \dated{School Service, Oklahoma School of Science and Mathematics}{2009}
-            \lst{Over 60 hours of aiding in the library and giving campus tours}
+            \sublist{Over 60 hours of aiding in the library and giving campus tours}
         \item \dated{Volunteer, GreenTree Assisted Living, Sand Springs, OK}{2009}
-            \lst{22.5 hours of assisting with the needs of senior citizens}
+            \sublist{22.5 hours of assisting with the needs of senior citizens}
         \item \dated{Volunteer, Methodist Manor, Tulsa, OK}{2006}
-            \lst{40 hours of assisting with the needs of senior citizens}
+            \sublist{40 hours of assisting with the needs of senior citizens}
     \end{itemize}
 }{}
 
