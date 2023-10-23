@@ -11,6 +11,7 @@
 \usepackage{inconsolata}  % use Inconsolata font for typewriter text
 \usepackage{booktabs}     % use \midrule instead of \hline
 
+% use toggle commands to show/hide specific parts of this document when rendered
 \newtoggle{highlightlgbt}   \toggletrue{highlightlgbt}
 \newtoggle{clearance}       \togglefalse{clearance}
 \newtoggle{courses}         \togglefalse{courses}
@@ -20,7 +21,7 @@
 \newtoggle{cphs}            \togglefalse{cphs}
 \newtoggle{deanslist}       \togglefalse{deanslist}
 \newtoggle{leesummer}       \toggletrue{leesummer}
-\newtoggle{leesummerdesc}   \toggletrue{leesummerdesc}
+\newtoggle{leesummerdesc}   \togglefalse{leesummerdesc}
 \newtoggle{questiefinalist} \togglefalse{questiefinalist}
 \newtoggle{ossmscholar}     \togglefalse{ossmscholar}
 \newtoggle{ossmmentorship}  \togglefalse{ossmmentorship}
@@ -56,6 +57,7 @@
 \newlength{\subListAntispace}    \setlength{\subListAntispace}{-.25in}
 \newlength{\subListMidAntispace} \setlength{\subListMidAntispace}{-2.5pt}
 \newlength{\subListEndAntispace} \setlength{\subListEndAntispace}{-.075in}
+\newlength{\subListDNEAntispace} \setlength{\subListDNEAntispace}{-7pt}
 
 \newcommand{\lst}[1]{
     \vspace{\subListAntispace}
@@ -88,7 +90,12 @@
 }
 
 \newcommand{\LGBTQIAplus}{LGBTQIA\raisebox{0.1ex}{+}}
+\newcommand{\Git}{\href{https://github.com/garrettheath4}{Git}}
+\newcommand{\HTC}{\href{https://en.wikipedia.org/wiki/High-throughput_computing}{HTC}}
 \newcommand{\BAHlink}{\href{https://www.boozallen.com/}{Booz Allen Hamilton}}
+\newcommand{\Cloudera}{%
+    \href{https://www.cloudera.com/products/open-source/apache-hadoop/key-cdh-components.html}{Cloudera}}
+\newcommand{\HTCondor}{\href{https://htcondor.org/}{HTCondor}}
 \newcommand{\leadershipglobe}{
     \item \dated{
             Secretary of GLOBE:\ Booz Allen Hamilton's \LGBTQIAplus{} Diversity Group
@@ -122,18 +129,13 @@
 }
 \newcommand{\leadershipsigep}{
     \item \dated{
-        Vice President for Recruitment of the \href{http://www.sigep.org}{Sigma Phi Epsilon Fraternity} at W\&L
+        Vice President for Recruitment of the \href{https://sigep.org/}{Sigma Phi Epsilon Fraternity} at W\&L
     }{2011--2013}
 }
 \newcommand{\leadershipitac}{
     \item \dated{
         W\&L IT Advisory Committee Member (informed W\&L ITS of technology needs on campus)
     }{2010--2014}
-}
-\newcommand{\leadershipscconf}{
-    \item \dated{
-        Attended the \href{http://sc11.supercomputing.org/}{SC11 High Performance Computing Conference} in Seattle, WA
-    }{2011}
 }
 
 \begin{document}
@@ -174,7 +176,7 @@
         \end{tabular*}
     \item[]
         \begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
-            \href{http://www.wlu.edu/}{\textbf{Washington and Lee University}}, Lexington, VA
+            \href{https://www.wlu.edu/}{\textbf{Washington and Lee University}}, Lexington, VA
             & (\textit{2010--2014}) \\
             B.S. Computer Science, concentration in Music (Graduated 2014)
             \iftoggle{gpa}{| GPA:\ 3.3 / Major GPA:\ 3.4}{}\\
@@ -184,7 +186,7 @@
     \iftoggle{ossm}{%
         \item[]
             \begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
-                \href{http://www.ossm.edu/}
+                \href{https://www.ossm.edu/}
                 {\textbf{Oklahoma School of Science and Mathematics}}, Oklahoma City, OK
                 & (\textit{2008--2010}) \\
                 \iftoggle{gpa}{This college-preparatory residential charter high school intentionally omits GPAs on its
@@ -210,14 +212,11 @@
 \begin{tabular*}{\textwidth}{p{2.2cm} l}
     {\large \textbf{Goal:}}      & Engineering software that improves peoples' lives
                                    and has a positive impact on society \\
-%TODO: Add cloud computing and CI (Bamboo, Ansible)
-%TODO: Replace "Supercomputing" with "HTC (Hadoop/Cloudera, HTCondor, MPI)"
-    {\large \textbf{Skills:}}    & Python, Java (EE, Tomcat, HK2, Guice), Scala, Web Apps (JavaScript, TypeScript,
-                                   React), Ruby, C,
+    {\large \textbf{Skills:}}    & Python, Java (EE, Tomcat, HK2, Guice), Scala, JavaScript, TypeScript, React/Redux,
+                                   Ruby, C, APIs,
                                    \\
-                                 & Docker, APIs, Databases (PostgreSQL), Linux,
-                                   \href{https://github.com/garrettheath4}{Git}, iOS, Supercomputing (MPI,
-                                   \href{http://www.htcondorproject.org/}{HTCondor}, Hadoop) \\
+                                 & Cloud (GCP, AWS), CI/CD (Docker, Bamboo, Ansible), \Git, DBs, Linux,
+                                   \HTC{} (Hadoop/\Cloudera) \\
     \iftoggle{clearance}{%
     {\large \textbf{Clearance:}} & Top Secret SCI (CI Poly: August 11, 2015. / %
                                    SCI DIA INDOC:\ August 13, 2015.) while at Booz Allen \\
@@ -271,15 +270,14 @@
     \item
         \dated{Research Assistant of Computer Science at W\&L with Dr.\ Joshua Stough}{June 2011--May 2014}
         \lst{%
-            Developed an \href{http://www.htcondorproject.org/}{HTCondor} supercomputing environment and provided
-            support and system administration
+            Developed an \HTCondor{} supercomputing environment and provided support and system administration
             %\item Expanding the applicability of this computing system and providing support to users
         }
     \item
         \dated{Information Technology Client Services Assistant at W\&L}{September 2010--May 2011}
         \lst{%
-            Created \href{http://youtu.be/NvOarFOmly0?hd=1}{videos} promoting the ITS department, the university
-            library, and the services they offer
+            Created \href{https://youtu.be/NvOarFOmly0}{videos} promoting the ITS department, the  university library,
+            and the services they offer
             %\item Digitized textbooks into a format accessible to visually-impared students on campus
         }
     \iftoggle{smithbros}{%
@@ -304,7 +302,7 @@
     \setlength{\itemsep}{\listSpacing}
     \item
         \dated{%
-            \href{http://go.wlu.edu/johnson}{Johnson Scholarship} Recipient, Washington \& Lee University, Lexington,
+            \href{https://go.wlu.edu/johnson}{Johnson Scholarship} Recipient, Washington \& Lee University, Lexington,
             VA
         }{2010--2014}
         \lst{\$250,000 full-ride merit-based scholarship covering tuition and room and board}
@@ -318,8 +316,9 @@
         \lst{Built equestrian training equipment for a counseling center (22.5 hours of planning and action)}
     \iftoggle{deanslist}{\item \dated{Dean's Academic Honor List at Washington \& Lee University}{2011}}{}
     \iftoggle{leesummer}{\item \dated{Robert E. Lee Research Scholars Program Participant}{2011}
-        \iftoggle{leesummerdesc}{\lst{Deployed and managed an \href{http://www.htcondorproject.org/}{HTCondor}
-        supercomputing/HTC cluster on university campus}}{}
+        \iftoggle{leesummerdesc}{\lst{
+            Deployed and managed an \HTCondor{} supercomputing/\HTC{} cluster on university campus
+        }}{\vspace{\subListDNEAntispace+\subListDNEAntispace}}
     }{}
     \item
         \dated{2nd place in the
@@ -328,8 +327,8 @@
     }{2011}
     \iftoggle{questiefinalist}{\item \dated{%
         \href{https://www.questbridge.org/}{QuestBridge} National College Match Scholarship Finalist
-    }{2009}}{\vspace{-7pt}}
-    \iftoggle{ossmscholar}{\item \dated{OSSM Computer Science Scholar Award}{2009}}{\vspace{-7pt}}
+    }{2009}}{\vspace{\subListDNEAntispace}}
+    \iftoggle{ossmscholar}{\item \dated{OSSM Computer Science Scholar Award}{2009}}{\vspace{\subListDNEAntispace}}
     %\item \dated{National Honor Society}{2008}
 \end{itemize}
 
@@ -353,11 +352,9 @@
         \leadershipsigep%
         \leadershipacm%
         \leadershipitac%
-        \leadershipscconf%
     }
     {% highlightlgbt == false
         \activityhackathons% 2014-2015 Professional
-        \leadershipscconf%   2011      Professional
         \leadershipglobe%    2014-2015 Leadership (LGBT)
         \leadershipacm%      2012-2014 Leadership
         \leadershipitac%     2010-2014 Leadership
@@ -372,7 +369,7 @@
         Social Media Chair of the \href{https://www.questbridge.org/scholars}{Quest Scholars Network} Chapter of W\&L
     }{2011--}}{\vspace{-3pt}}
     \iftoggle{shakespeare}{\item \dated{%
-        Actor and Technical Assistant for \href{http://www.youtube.com/user/WLUShakespeare/}{Shakespeare Society} at
+        Actor and Technical Assistant for \href{https://www.youtube.com/user/WLUShakespeare}{Shakespeare Society} at
         W\&L
     }{2011--2012}}{\vspace{-3pt}}
     %\item \dated{Masonic ``Student of Today'' Leadership Award}{2006, 2007}
