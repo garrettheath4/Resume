@@ -2,13 +2,12 @@
 % vim: set textwidth=120 tabstop=4 softtabstop=4 expandtab smarttab shiftround autoindent smartindent:
 
 \documentclass[11pt, letterpaper]{letter}
-\usepackage{hyperref}
-\usepackage{url}
-\usepackage{fullpage}
-\usepackage{graphicx}
-\usepackage{calc}
-\usepackage{etoolbox}
-\usepackage{ulem}
+\usepackage{hyperref}     % clickable URLs for \href text
+\usepackage{fullpage}     % minimize page margins
+\usepackage{calc}         % provides \newlength and \setlength commands
+\usepackage{etoolbox}     % provides \newtoggle command
+\usepackage{ulem}         % provides \ULdepth command
+\usepackage{lmodern}      % make bullet points smaller
 \usepackage{inconsolata}  % use Inconsolata font for typewriter text
 \usepackage{booktabs}     % use \midrule instead of \hline
 
@@ -30,11 +29,13 @@
 \newtoggle{hobbies}         \togglefalse{hobbies}
 \newtoggle{references}      \togglefalse{references}
 
+% hyperref package configuration
 \hypersetup{linkbordercolor={1 1 1},
             citebordercolor={0 0 0},
             urlbordercolor={0 1 0},
             pdfborder={0 0 0}}
 
+% page setup using calc package
 \textheight=10in \pagestyle{empty} \raggedbottom{} \raggedright{}
 \setlength{\tabcolsep}{0in} \setlength{\columnwidth}{.5\textwidth}
 \addtolength{\topmargin}{-.5in}
@@ -85,9 +86,11 @@
     \myul{2.7pt}{0.5pt}{\large \textbf{#1}}
 }
 
+\newcommand{\LGBTQIAplus}{LGBTQIA\raisebox{0.1ex}{+}}
+\newcommand{\BAHlink}{\href{https://www.boozallen.com/}{Booz Allen Hamilton}}
 \newcommand{\leadershipglobe}{
     \item \dated{
-        Secretary of GLOBE:\ BAH's Lesbian, Gay, Bisexual, and Transgender Employee Diversity Group
+            Secretary of GLOBE:\ Booz Allen Hamilton's \LGBTQIAplus{} Diversity Group
     }{2014--2015}
 }
 \newcommand{\activityhackathons}{
@@ -181,12 +184,12 @@
 \vspace{\headerAntispace}
 \begin{itemize}{%
     \setlength{\itemsep}{\listSpacing}
-    \item \dated{Senior Software Engineer at Catalist, LLC}{September 2015--Present}
+    \item \dated{Senior Software Engineer at \href{https://catalist.us/}{Catalist, LLC}}{September 2015--Present}
     \lst{%
         Developed and managed well-documented APIs using Scala, Java, and Tomcat to integrate with clients
     }
     \item \dated{%
-        Software Engineer Consultant at Booz Allen Hamilton
+            Software Engineer Consultant at \BAHlink{}
     }{July 2014--September 2015}
     \lst{%
         Developed mission support software for a DoD client on the C3E DIA/Military Intel team
@@ -199,7 +202,7 @@
     % and JQuery
     }
     \item \dated{%
-        Interning Research Assistant at Booz Allen Hamilton
+        Interning Research Assistant at \BAHlink{}
     }{June 2013--August 2013}
     \lst{%
         Engineered solution using PHP and Java to increase browser anonymity for a DIA marketing project
@@ -247,40 +250,37 @@
 \vspace{\headerAntispace}
 \begin{itemize}{%
     \item[]
-    \begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
-        \href{https://generalassemb.ly/}{\textbf{General Assembly}}, Washington, DC
-        & (\textit{Sep 2017--Dec 2017}) \\
-        \href{https://generalassemb.ly/education/user-experience-design}{User Experience Design} course (part-time,
-        on-campus)\\
-    \end{tabular*}
-
+        \begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
+            \href{https://generalassemb.ly/}{\textbf{General Assembly}}, Washington, DC
+            & (\textit{Sep 2017--Dec 2017}) \\
+            \href{https://generalassemb.ly/education/user-experience-design}{User Experience Design} course (part-time,
+            on-campus)\\
+        \end{tabular*}
     \item[]
-    \begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
-        \href{http://www.wlu.edu/}{\textbf{Washington and Lee University}}, Lexington, VA
-        & (\textit{2010--2014}) \\
-        B.S. Computer Science, concentration in Music (Graduated 2014)
-        \iftoggle{gpa}{| GPA:\ 3.3 / Major GPA:\ 3.4}{}\\
-    \end{tabular*}
+        \begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
+            \href{http://www.wlu.edu/}{\textbf{Washington and Lee University}}, Lexington, VA
+            & (\textit{2010--2014}) \\
+            B.S. Computer Science, concentration in Music (Graduated 2014)
+            \iftoggle{gpa}{| GPA:\ 3.3 / Major GPA:\ 3.4}{}\\
+        \end{tabular*}
 
     \vspace{-2pt}
-
     \iftoggle{ossm}{%
         \item[]
-        \begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
-            \href{http://www.ossm.edu/}
-            {\textbf{Oklahoma School of Science and Mathematics}}, Oklahoma City, OK
-            & (\textit{2008--2010}) \\
-            \iftoggle{gpa}{This college-preparatory residential charter high school intentionally omits GPAs on its
-            transcripts.}{}
-        \end{tabular*}
+            \begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
+                \href{http://www.ossm.edu/}
+                {\textbf{Oklahoma School of Science and Mathematics}}, Oklahoma City, OK
+                & (\textit{2008--2010}) \\
+                \iftoggle{gpa}{This college-preparatory residential charter high school intentionally omits GPAs on its
+                transcripts.}{}
+            \end{tabular*}
     }{}% else leave out OSSM
-
     \iftoggle{cphs}{%
         \item[]
-        \begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
-            \textbf{Charles Page High School}, Sand Springs, OK (Class Rank: 1 of 402) &
-            (\textit{2006--2008})
-        \end{tabular*}
+            \begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
+                \textbf{Charles Page High School}, Sand Springs, OK (Class Rank: 1 of 402) &
+                (\textit{2006--2008})
+            \end{tabular*}
     }{}% else leave out CPHS
 }\end{itemize}
 
@@ -294,43 +294,34 @@
 \vspace{\headerAntispace}
 \begin{itemize}
     \setlength{\itemsep}{\listSpacing}
-    \item \dated{\href{http://go.wlu.edu/johnson}{Johnson Scholarship} Recipient, Washington \& Lee University,
-        Lexington, VA
-    }{2010--2014}
-    \lst{\$250,000 full-ride merit-based scholarship covering tuition and room and board}
-
-    \item \dated{%
-        \href{https://my.wlu.edu/university-registrar/our-services/university-honors-board/algernon-sydney-sullivan-award}
-        {Algernon Sydney Sullivan Award} nominee, Washington \& Lee University, Lexington, VA
-    }{2014}
-
-    \item \dated{Eagle Scout Rank of the Boy Scouts of America}{2010}
-    \lst{Built equestrian training equipment for a counseling center (22.5 hours of planning and action)}
-
+    \item
+        \dated{%
+            \href{http://go.wlu.edu/johnson}{Johnson Scholarship} Recipient, Washington \& Lee University, Lexington,
+            VA
+        }{2010--2014}
+        \lst{\$250,000 full-ride merit-based scholarship covering tuition and room and board}
+    \item
+        \dated{%
+            \href{https://my.wlu.edu/university-registrar/our-services/university-honors-board/algernon-sydney-sullivan-award}
+            {Algernon Sydney Sullivan Award} nominee, Washington \& Lee University, Lexington, VA
+        }{2014}
+    \item
+        \dated{Eagle Scout Rank of the Boy Scouts of America}{2010}
+        \lst{Built equestrian training equipment for a counseling center (22.5 hours of planning and action)}
     \iftoggle{deanslist}{\item \dated{Dean's Academic Honor List at Washington \& Lee University}{2011}}{}
-
-    \iftoggle{leesummer}{\item \dated{Robert E. Lee Research Scholars Program
-        Participant}{2011}
-        \iftoggle{leesummerdesc}{\lst{%
-            Deployed and managed an \href{http://www.htcondorproject.org/}{HTCondor} supercomputing/HTC cluster on
-            university campus
-        }}{}
+    \iftoggle{leesummer}{\item \dated{Robert E. Lee Research Scholars Program Participant}{2011}
+        \iftoggle{leesummerdesc}{\lst{Deployed and managed an \href{http://www.htcondorproject.org/}{HTCondor}
+        supercomputing/HTC cluster on university campus}}{}
     }{}
-
-    \item \dated{%
-        2nd place in the
+    \item
+        \dated{2nd place in the
         \href{https://library.educause.edu/resources/2006/1/information-security-awareness-video-and-poster-contest-winners}
         {2011 EDUCAUSE Security Awareness Video Contest}
     }{2011}
-
     \iftoggle{questiefinalist}{\item \dated{%
         \href{https://www.questbridge.org/}{QuestBridge} National College Match Scholarship Finalist
     }{2009}}{\vspace{-7pt}}
-
-    \iftoggle{ossmscholar}{\item \dated{%
-        OSSM Computer Science Scholar Award
-    }{2009}}{\vspace{-7pt}}
-
+    \iftoggle{ossmscholar}{\item \dated{OSSM Computer Science Scholar Award}{2009}}{\vspace{-7pt}}
     %\item \dated{National Honor Society}{2008}
 \end{itemize}
 
@@ -366,20 +357,16 @@
         \leadershipra%       2013-2014 Leadership (LGBT)
         \leadershipgei%      2012-2014 Leadership (LGBT)
     }
-
     \iftoggle{ossmmentorship}{\item \dated{%
         Supercomputing and Parallel Processing Mentorship with Dr.\ Farideh Samadzadeh
     }{2009--2010}}{\vspace{-3pt}}
-
     \iftoggle{qbsocial}{\item \dated{%
         Social Media Chair of the \href{https://www.questbridge.org/scholars}{Quest Scholars Network} Chapter of W\&L
     }{2011--}}{\vspace{-3pt}}
-
     \iftoggle{shakespeare}{\item \dated{%
-        \href{http://www.youtube.com/user/WLUShakespeare/}{Actor} and Technical Assistant for the Shakespeare Society
-        at W\&L
+        Actor and Technical Assistant for \href{http://www.youtube.com/user/WLUShakespeare/}{Shakespeare Society} at
+        W\&L
     }{2011--2012}}{\vspace{-3pt}}
-
     %\item \dated{Masonic ``Student of Today'' Leadership Award}{2006, 2007}
     %    \lst{Implemented Dr. Farideh Samadzadeh's HPC process scheduling algorithm}
     %\item \dated{Programming competitions}{2009--2011}
