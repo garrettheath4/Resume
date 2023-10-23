@@ -13,6 +13,7 @@
 
 \newtoggle{highlightlgbt}   \toggletrue{highlightlgbt}
 \newtoggle{clearance}       \togglefalse{clearance}
+\newtoggle{courses}         \togglefalse{courses}
 \newtoggle{smithbros}       \togglefalse{smithbros}
 \newtoggle{gpa}             \togglefalse{gpa}
 \newtoggle{ossm}            \togglefalse{ossm}
@@ -98,9 +99,10 @@
     \lst{
         PyNight (Feb 2015): 5th place out of 200 contestants in Python programming competition
         \vspace{\subListMidAntispace}
-    \item {
-        Hack-A-Thon for Hope (2014): Created model to predict genocide for the Holocaust Memorial Museum
-    }}
+        \item {
+            Hack-A-Thon for Hope (2014): Created model to predict genocide for the Holocaust Memorial Museum
+        }
+    }
 }
 \newcommand{\leadershipra}{
     \item \dated{
@@ -139,6 +141,11 @@
 % Set font
 \sffamily
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT START                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{center}{\underline{\Large{\textbf{Garrett Heath Koller}}}}\end{center}
 \vspace{-8pt}
 
@@ -149,97 +156,6 @@
     & Email: \texttt{\IfFileExists{./secret_email.txt}{\input{./secret_email.txt}}{chakra-angle0l@icloud.com}} \\
     \midrule
 \end{tabular*}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% GOALS AND SKILLS SECTION                       %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{tabular*}{\textwidth}{p{2.2cm} l}
-    {\large \textbf{Goal:}}      & Engineering software that improves peoples' lives
-                                   and has a positive impact on society \\
-    {\large \textbf{Skills:}}    & Python, Java (EE, Tomcat, HK2, Guice), Scala, Web Apps (JavaScript, TypeScript,
-                                   React), Ruby, C,
-                                   \\
-                                 & Docker, APIs, Databases (PostgreSQL), Linux,
-                                   \href{https://github.com/garrettheath4}{Git}, iOS, Supercomputing (MPI,
-                                   \href{http://www.htcondorproject.org/}{HTCondor}, Hadoop) \\
-    \iftoggle{clearance}{%
-    {\large \textbf{Clearance:}} & Top Secret SCI (CI Poly: August 11, 2015. / %
-                                   SCI DIA INDOC:\ August 13, 2015.) while at Booz Allen \\
-    }{}
-    {\large \textbf{Courses:}}   & User Experience Design, Parallel Programming, Cryptography, Programming Language
-                                   Design
-\end{tabular*}
-
-\vspace{\firstSectionSpacing}
-\vspace{\sectionSpacing}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% EMPLOYMENT SECTION                             %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\sectionheader{Employment}
-\vspace{\headerAntispace}
-\begin{itemize}{%
-    \setlength{\itemsep}{\listSpacing}
-    \item \dated{Senior Software Engineer at \href{https://catalist.us/}{Catalist, LLC}}{September 2015--Present}
-    \lst{%
-        Developed and managed well-documented APIs using Scala, Java, and Tomcat to integrate with clients
-    }
-    \item \dated{%
-            Software Engineer Consultant at \BAHlink{}
-    }{July 2014--September 2015}
-    \lst{%
-        Developed mission support software for a DoD client on the C3E DIA/Military Intel team
-    \vspace{\subListMidAntispace}
-    \item {%
-        Utilized Java Spring and Hibernate frameworks and an Oracle Database to serve a web interface front-end
-    }
-    \vspace{\subListMidAntispace}
-    %\item Designed and implemented multi-language web-based front-end using JSP
-    % and JQuery
-    }
-    \item \dated{%
-        Interning Research Assistant at \BAHlink{}
-    }{June 2013--August 2013}
-    \lst{%
-        Engineered solution using PHP and Java to increase browser anonymity for a DIA marketing project
-    }
-    \item \dated{%
-        Technical Specialist at the Information Technology Services HelpDesk at W\&L
-    }{April 2012--June 2014}
-    \lst{%
-        Resolved a 2-year-long recurring problem with the campus's Aruba Wi-Fi network and Apple devices
-    }
-    \item \dated{%
-        Research Assistant of Computer Science at W\&L with Dr.\ Joshua Stough
-    }{June 2011--May 2014}
-    \lst{%
-        Developed an \href{http://www.htcondorproject.org/}{HTCondor} supercomputing environment and provided support
-        and system administration
-        %\item Expanding the applicability of this computing system and providing
-        %support to users
-    }
-    \item \dated{%
-        Information Technology Client Services Assistant at W\&L
-    }{September 2010--May 2011}
-    \lst{%
-        Created \href{http://youtu.be/NvOarFOmly0?hd=1}{videos} promoting the ITS department, the university library,
-        and the services they offer
-        %\item Digitized textbooks into a format accessible to visually-impared
-        %students on campus
-    }
-    \iftoggle{smithbros}{%
-        \item \datedTwo{%
-            File Digitizer at Smith Brothers Abstract and Title Co.
-        }{June 2009--August 2009}{June 2010--August 2010}
-        %\lst{Abstract Cataloger/Indexer, Storage Assistant, and Copy Analyst}
-    }{}
-}\end{itemize}
-
-\vspace{\sectionSpacing}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -285,6 +201,98 @@
 }\end{itemize}
 
 \vspace{\sectionSpacing}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GOALS AND SKILLS SECTION                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tabular*}{\textwidth}{p{2.2cm} l}
+    {\large \textbf{Goal:}}      & Engineering software that improves peoples' lives
+                                   and has a positive impact on society \\
+%TODO: Add cloud computing and CI (Bamboo, Ansible)
+%TODO: Replace "Supercomputing" with "HTC (Hadoop/Cloudera, HTCondor, MPI)"
+    {\large \textbf{Skills:}}    & Python, Java (EE, Tomcat, HK2, Guice), Scala, Web Apps (JavaScript, TypeScript,
+                                   React), Ruby, C,
+                                   \\
+                                 & Docker, APIs, Databases (PostgreSQL), Linux,
+                                   \href{https://github.com/garrettheath4}{Git}, iOS, Supercomputing (MPI,
+                                   \href{http://www.htcondorproject.org/}{HTCondor}, Hadoop) \\
+    \iftoggle{clearance}{%
+    {\large \textbf{Clearance:}} & Top Secret SCI (CI Poly: August 11, 2015. / %
+                                   SCI DIA INDOC:\ August 13, 2015.) while at Booz Allen \\
+    }{}
+    \iftoggle{courses}{%
+    {\large \textbf{Courses:}}   & User Experience Design, Parallel Programming, Cryptography, Programming Language
+                                   Design
+    }{}
+\end{tabular*}
+
+\vspace{\firstSectionSpacing}
+\vspace{\sectionSpacing}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EMPLOYMENT SECTION                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionheader{Employment}
+\vspace{\headerAntispace}
+\begin{itemize}{%
+    \setlength{\itemsep}{\listSpacing}
+    \item
+        \dated{Senior Software Engineer at \href{https://catalist.us/}{Catalist, LLC}}{September 2015--Present}
+        \lst{%
+            Developed and managed multiple full-stack apps and APIs using Java, TypeScript, and React
+            \vspace{\subListMidAntispace}
+            \item {Architected and implemented CI/CD pipeline, including Dockerized unit tests and Blue/Green
+                deployments}
+            \vspace{\subListMidAntispace}
+            \item {Organized and facilitated 3 concurrent Python bootcamps: beginner, intermediate, and advanced}
+        }
+    \item
+        \dated{Software Engineer Consultant at \BAHlink{}}{July 2014--September 2015}
+        \lst{%
+            Developed mission support software for a DoD client on the C3E DIA/Military Intel team
+            \vspace{\subListMidAntispace}
+            \item {%
+                Utilized Java Spring and Hibernate frameworks and an Oracle Database to serve a web interface front-end
+            }
+            %\vspace{\subListMidAntispace}
+            %\item Designed and implemented multi-language web-based front-end using JSP
+            % and JQuery
+        }
+    \item
+        \dated{Interning Research Assistant at \BAHlink{}}{June 2013--August 2013}
+        \lst{Engineered solution using PHP and Java to increase browser anonymity for a DIA marketing project}
+    \item
+        \dated{Technical Specialist at the Information Technology Services HelpDesk at W\&L}{April 2012--June 2014}
+        \lst{Resolved a 2-year-long recurring problem with the campus's Aruba Wi-Fi network and Apple devices}
+    \item
+        \dated{Research Assistant of Computer Science at W\&L with Dr.\ Joshua Stough}{June 2011--May 2014}
+        \lst{%
+            Developed an \href{http://www.htcondorproject.org/}{HTCondor} supercomputing environment and provided
+            support and system administration
+            %\item Expanding the applicability of this computing system and providing support to users
+        }
+    \item
+        \dated{Information Technology Client Services Assistant at W\&L}{September 2010--May 2011}
+        \lst{%
+            Created \href{http://youtu.be/NvOarFOmly0?hd=1}{videos} promoting the ITS department, the university
+            library, and the services they offer
+            %\item Digitized textbooks into a format accessible to visually-impared students on campus
+        }
+    \iftoggle{smithbros}{%
+        \item
+            \datedTwo{%
+                File Digitizer at Smith Brothers Abstract and Title Co.
+            }{June 2009--August 2009}{June 2010--August 2010}
+            %\lst{Abstract Cataloger/Indexer, Storage Assistant, and Copy Analyst}
+    }{}
+}\end{itemize}
+
+\vspace{\sectionSpacing}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % HONORS AND AWARDS SECTION                      %
@@ -377,6 +385,7 @@
     %\item \dated{Oklahoma's Greatest Generation Project}{2007}
     %    \lst{Created video interview of local WWII veteran's experiences}
 \end{itemize}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % OTHER SECTIONS                                 %
