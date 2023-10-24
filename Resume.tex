@@ -21,7 +21,7 @@
 \newtoggle{ossm}            \togglefalse{ossm}
 \newtoggle{cphs}            \togglefalse{cphs}
 \newtoggle{deanslist}       \togglefalse{deanslist}
-\newtoggle{leesummer}       \toggletrue{leesummer}
+\newtoggle{leesummer}       \togglefalse{leesummer}
 \newtoggle{leesummerdesc}   \togglefalse{leesummerdesc}
 \newtoggle{questiefinalist} \togglefalse{questiefinalist}
 \newtoggle{ossmscholar}     \togglefalse{ossmscholar}
@@ -33,10 +33,13 @@
 \newtoggle{references}      \togglefalse{references}
 
 % hyperref package configuration
-\hypersetup{linkbordercolor={1 1 1},
-            citebordercolor={0 0 0},
-            urlbordercolor={0 1 0},
-            pdfborder={0 0 0}}
+\hypersetup{%
+    colorlinks=false,
+    urlbordercolor={1 1 1},
+    pdftitle={Garrett Heath Koller's Resume},
+    pdfauthor={Garrett Heath Koller},
+    pdfpagemode=FullScreen,
+}
 
 % page setup using calc package
 \textheight=10in \pagestyle{empty} \raggedbottom{} \raggedright{}
@@ -84,6 +87,8 @@
 \newcommand{\LGBTQIAplus}{LGBTQIA\raisebox{0.1ex}{+}}
 \newcommand{\Git}{\href{https://github.com/garrettheath4}{Git}}
 \newcommand{\HTC}{\href{https://en.wikipedia.org/wiki/High-throughput_computing}{HTC}}
+\newcommand{\BlueGreen}{\href{https://www.redhat.com/en/topics/devops/what-is-blue-green-deployment}{Blue/Green}}
+\newcommand{\CatalistLLC}{\href{https://catalist.us/}{Catalist, LLC}}
 \newcommand{\BAHlink}{\href{https://www.boozallen.com/}{Booz Allen Hamilton}}
 \newcommand{\Cloudera}{%
     \href{https://www.cloudera.com/products/open-source/apache-hadoop/key-cdh-components.html}{Cloudera}}
@@ -222,14 +227,14 @@
 \sectionheader{Employment}
 \vspace{\headerAntispace}
 \begin{compactitem}
-    \item \dated{Senior Software Engineer at \href{https://catalist.us/}{Catalist, LLC}}{September 2015--Present}
+    \item \dated{Senior Software Engineer at \CatalistLLC{}}{September 2015--Present}
         \begin{compactitem}
             %TODO
             \item Created full-stack client-facing file processing web app using Java, Scala, TypeScript, and React
             \item Enhanced multiple public-facing APIs written in Java and Scala to better fit clients' big data needs
             \item Taught 3 concurrent company-wide Python bootcamp courses: beginner, intermediate, and advanced
-            \item Architected and implemented CI/CD pipeline, including Dockerized unit tests and Blue/Green
-                deployments
+            \item Automated code integration (CI) and unit tests in an isolated, containerized way using Docker Compose
+            \item Architected and automated code deployments (CD) to a new \BlueGreen{} deployment model
             \item Developed Scala code that leveraged \Elasticsearch{} to reconcile records from disparate big data
                 sources
         \end{compactitem}
