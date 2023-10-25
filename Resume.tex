@@ -12,26 +12,6 @@
 \usepackage{inconsolata}  % use Inconsolata font for typewriter text
 \usepackage{booktabs}     % use \midrule instead of \hline
 
-% use toggle commands to show/hide specific parts of this document when rendered
-\newtoggle{highlightlgbt}   \toggletrue{highlightlgbt}
-\newtoggle{clearance}       \togglefalse{clearance}
-\newtoggle{courses}         \togglefalse{courses}
-\newtoggle{smithbros}       \togglefalse{smithbros}
-\newtoggle{gpa}             \togglefalse{gpa}
-\newtoggle{ossm}            \togglefalse{ossm}
-\newtoggle{cphs}            \togglefalse{cphs}
-\newtoggle{deanslist}       \togglefalse{deanslist}
-\newtoggle{leesummer}       \togglefalse{leesummer}
-\newtoggle{leesummerdesc}   \togglefalse{leesummerdesc}
-\newtoggle{questiefinalist} \togglefalse{questiefinalist}
-\newtoggle{ossmscholar}     \togglefalse{ossmscholar}
-\newtoggle{ossmmentorship}  \togglefalse{ossmmentorship}
-\newtoggle{qbsocial}        \togglefalse{qbsocial}
-\newtoggle{shakespeare}     \togglefalse{shakespeare}
-\newtoggle{volunteering}    \togglefalse{volunteering}
-\newtoggle{hobbies}         \togglefalse{hobbies}
-\newtoggle{references}      \togglefalse{references}
-
 % hyperref package configuration
 \hypersetup{%
     colorlinks=false,
@@ -84,54 +64,12 @@
     \myul{2.7pt}{0.5pt}{\large \textbf{#1}}
 }
 
+% define commonly-used hyperlinks
 \newcommand{\LGBTQIAplus}{LGBTQIA\raisebox{0.1ex}{+}}
-\newcommand{\Git}{\href{https://github.com/garrettheath4}{Git}}
 \newcommand{\HTC}{\href{https://en.wikipedia.org/wiki/High-throughput_computing}{HTC}}
-\newcommand{\BlueGreen}{\href{https://www.redhat.com/en/topics/devops/what-is-blue-green-deployment}{Blue/Green}}
 \newcommand{\CatalistLLC}{\href{https://catalist.us/}{Catalist, LLC}}
-\newcommand{\BAHlink}{\href{https://www.boozallen.com/}{Booz Allen Hamilton}}
-\newcommand{\Cloudera}{%
-    \href{https://www.cloudera.com/products/open-source/apache-hadoop/key-cdh-components.html}{Cloudera}}
+\newcommand{\BAH}{\href{https://www.boozallen.com/}{Booz Allen Hamilton}}
 \newcommand{\HTCondor}{\href{https://htcondor.org/}{HTCondor}}
-\newcommand{\Elasticsearch}{\href{https://www.elastic.co/elasticsearch/}{Elasticsearch}}
-\newcommand{\leadershipglobe}{
-    \item \dated{
-            Secretary of GLOBE:\ Booz Allen Hamilton's \LGBTQIAplus{} Diversity Group
-    }{2014--2015}
-}
-\newcommand{\activityhackathons}{
-    \item \dated{Hackathons hosted by Booz Allen Hamilton:}{2014--2015}
-        \begin{compactitem}
-        \item PyNight (Feb 2015): 5th place out of 200 contestants in Python programming competition
-        \item Hack-A-Thon for Hope (2014): Created model to predict genocide for the Holocaust Memorial Museum
-        \end{compactitem}
-}
-\newcommand{\leadershipra}{
-    \item \dated{
-        Co-founder and Social Media Chair of the
-        \href{https://www.facebook.com/groups/417758651658266/}{LGBTQA Rockbridge Alliance} community organization
-    }{2013--2014}
-}
-\newcommand{\leadershipgei}{
-    \item \dated{
-        Treasurer of the GLBTQ Equality Initiative at W\&L
-    }{2012--2014}
-}
-\newcommand{\leadershipacm}{
-    \item \dated{
-        Vice President and Secretary of the W\&L Chapter of Association for Computing Machinery
-    }{2012--2014}
-}
-\newcommand{\leadershipsigep}{
-    \item \dated{
-        Vice President for Recruitment of the \href{https://sigep.org/}{Sigma Phi Epsilon Fraternity} at W\&L
-    }{2011--2013}
-}
-\newcommand{\leadershipitac}{
-    \item \dated{
-        W\&L IT Advisory Committee Member (informed W\&L ITS of technology needs on campus)
-    }{2010--2014}
-}
 
 \begin{document}
 
@@ -148,9 +86,9 @@
 
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
     \IfFileExists{./secret_street.txt}{\input{./secret_street.txt}}{\textit{(full address available upon request)}}
-    & Cell Phone: \IfFileExists{./secret_phone.txt}{\input{./secret_phone.txt}}{\textit{(available upon request)}} \\
+    & Cell Phone:\ \IfFileExists{./secret_phone.txt}{\input{./secret_phone.txt}}{\textit{(available upon request)}} \\
     Washington, DC  20009 USA
-    & Email: \texttt{\IfFileExists{./secret_email.txt}{\input{./secret_email.txt}}{chakra-angle0l@icloud.com}} \\
+    & Email:\ \texttt{\IfFileExists{./secret_email.txt}{\input{./secret_email.txt}}{chakra-angle0l@icloud.com}} \\
     \midrule
 \end{tabular*}
 
@@ -158,6 +96,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % EDUCATION SECTION                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% use toggle commands to show/hide specific parts of this document when rendered
+\newtoggle{gpa}  \togglefalse{gpa}
+\newtoggle{ossm} \togglefalse{ossm}
+\newtoggle{cphs} \togglefalse{cphs}
 
 \sectionheader{Education}
 \vspace{\headerAntispace}
@@ -201,13 +144,20 @@
 % GOALS AND SKILLS SECTION                       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{tabular*}{\textwidth}{p{2.2cm} l}
+\newtoggle{clearance} \togglefalse{clearance}
+\newtoggle{courses}         \togglefalse{courses}
+
+\newcommand{\Git}{\href{https://github.com/garrettheath4}{Git}}
+\newcommand{\Cloudera}{%
+    \href{https://www.cloudera.com/products/open-source/apache-hadoop/key-cdh-components.html}{Cloudera}}
+
+\begin{tabular*}{\textwidth}{p{1.5cm} l}
     {\large \textbf{Goal:}}      & Engineering software that improves peoples' lives
                                    and has a positive impact on society \\
-    {\large \textbf{Skills:}}    & Python, Java (EE, Tomcat, HK2, Guice), Scala, JavaScript, TypeScript, React/Redux,
-                                   Ruby, C, APIs,
+    {\large \textbf{Skills:}}    & Python, Java (EE, Tomcat, HK2, Guice), Scala, Web apps (JavaScript, TypeScript,
+                                   React/Redux), Ruby, C,
                                    \\
-                                 & Cloud (GCP, AWS), CI/CD (Docker, Bamboo, Ansible), \Git, DBs, Linux,
+                                 & Cloud (GCP, AWS), CI/CD (Docker, Bamboo, Ansible), \Git, APIs, DBs, Linux,
                                    \HTC{} (Hadoop/\Cloudera) \\
     \iftoggle{clearance}{%
     {\large \textbf{Clearance:}} & Top Secret SCI (CI Poly: August 11, 2015. / %
@@ -224,27 +174,34 @@
 % EMPLOYMENT SECTION                             %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newtoggle{smithbros} \togglefalse{smithbros}
+
+\newcommand{\Elasticsearch}{\href{https://www.elastic.co/elasticsearch/}{Elasticsearch}}
+\newcommand{\BlueGreen}{\href{https://www.redhat.com/en/topics/devops/what-is-blue-green-deployment}{Blue/Green}}
+
 \sectionheader{Employment}
 \vspace{\headerAntispace}
 \begin{compactitem}
-    \item \dated{Senior Software Engineer at \CatalistLLC{}}{September 2015--Present}
+    \item \dated{Senior Software Engineer at \CatalistLLC}{September 2015--Present}
         \begin{compactitem}
-            %TODO
-            \item Created full-stack client-facing file processing web app using Java, Scala, TypeScript, and React
+            \item Integrated Google Cloud Storage Buckets as a file input source for internal big data matching system
+            \item Wrote full-stack client-facing file processing web app using Java, Scala, TypeScript, and React
             \item Enhanced multiple public-facing APIs written in Java and Scala to better fit clients' big data needs
-            \item Taught 3 concurrent company-wide Python bootcamp courses: beginner, intermediate, and advanced
-            \item Automated code integration (CI) and unit tests in an isolated, containerized way using Docker Compose
-            \item Architected and automated code deployments (CD) to a new \BlueGreen{} deployment model
             \item Developed Scala code that leveraged \Elasticsearch{} to reconcile records from disparate big data
                 sources
+            \item Wrote scripts in Python, Ruby, and Bash to validate code and release projects as new artifacts
+            \item CI:\ Automated code integration and unit tests in an isolated, containerized way using Docker Compose
+            \item CD:\ Architected and automated code deployments to a new \BlueGreen{} deployment model
+            \item Drafted documentation that ranged from getting-started tutorials to technical code documentation
+            \item Taught 3 concurrent company-wide Python bootcamp courses: beginner, intermediate, and advanced
         \end{compactitem}
-    \item \dated{Software Engineer Consultant at \BAHlink{}}{July 2014--September 2015}
+    \item \dated{Software Engineer Consultant at \BAH}{July 2014--September 2015}
         \begin{compactitem}
             \item Developed mission support software for a DoD client on the C3E DIA/Military Intel team
-            \item Utilized Java Spring and Hibernate frameworks and an Oracle Database to serve a web app
+            \item Utilized Java EE, Spring, and Hibernate frameworks and an Oracle Database to serve a Tomcat web app
             %\item Designed and implemented multi-language web-based front-end using JSP and JQuery
         \end{compactitem}
-    \item \dated{Interning Research Assistant at \BAHlink{}}{June 2013--August 2013}
+    \item \dated{Interning Research Assistant at \BAH}{June 2013--August 2013}
         \begin{compactitem}
             \item Engineered solution using PHP and Java to increase browser anonymity for a DIA marketing project
         \end{compactitem}
@@ -277,6 +234,13 @@
 % HONORS AND AWARDS SECTION                      %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newtoggle{sullivanaward}   \togglefalse{sullivanaward}
+\newtoggle{deanslist}       \togglefalse{deanslist}
+\newtoggle{leesummer}       \togglefalse{leesummer}
+\newtoggle{leesummerdesc}   \togglefalse{leesummerdesc}
+\newtoggle{questiefinalist} \togglefalse{questiefinalist}
+\newtoggle{ossmscholar}     \togglefalse{ossmscholar}
+
 \sectionheader{Honors and Awards}
 \vspace{\headerAntispace}
 \begin{compactitem}
@@ -288,11 +252,13 @@
         \begin{compactitem}
         \item \$250,000 full-ride merit-based scholarship covering tuition and room and board
         \end{compactitem}
-    \item
-        \dated{%
-            \href{https://my.wlu.edu/university-registrar/our-services/university-honors-board/algernon-sydney-sullivan-award}
-            {Algernon Sydney Sullivan Award} nominee, Washington \& Lee University, Lexington, VA
-        }{2014}
+    \iftoggle{sullivanaward}{%
+        \item
+            \dated{%
+                \href{https://my.wlu.edu/university-registrar/our-services/university-honors-board/algernon-sydney-sullivan-award}
+                {Algernon Sydney Sullivan Award} nominee, Washington \& Lee University, Lexington, VA
+            }{2014}
+        }{}
     \item
         \dated{Eagle Scout Rank of the Boy Scouts of America}{2010}
         \begin{compactitem}
@@ -323,27 +289,92 @@
 % LEADERSHIP AND ACTIVITIES SECTION              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newtoggle{highlightlgbt}    \toggletrue{highlightlgbt}
+\newtoggle{sumwluleadership} \toggletrue{sumwluleadership}
+\newtoggle{ossmmentorship}   \togglefalse{ossmmentorship}
+\newtoggle{qbsocial}         \togglefalse{qbsocial}
+\newtoggle{shakespeare}      \togglefalse{shakespeare}
+
+\newcommand{\CWA}{\href{https://cwa-union.org/}{CWA}}
+\newcommand{\leadershipunioncwa}{
+    \item \dated{Volunteering for Bargaining Committees of other companies unionizing with \CWA}{2022--Present}
+}
+\newcommand{\leadershipunioncatalist}{
+    \item \dated{Elected member of Bargaining Committee for Catalist Union workers}{2021--2022}
+}
+\newcommand{\leadershipdeiasc}{
+    \item \dated{Appointed member of DEIA Steering Committee for employees at \CatalistLLC}{2020--2021}
+}
+\newcommand{\leadershipglobe}{
+    \item \dated{Secretary of GLOBE:\ \BAH's \LGBTQIAplus{} Diversity Group}{2014--2015}
+}
+\newcommand{\activityhackathons}{
+    \item \dated{Hackathons hosted by \BAH:}{2014--2015}
+        \begin{compactitem}
+        \item PyNight (Feb 2015): 5th place out of 200 contestants in Python programming competition
+        \item Hack-A-Thon for Hope (2014): Created model to predict genocide for the Holocaust Memorial Museum
+        \end{compactitem}
+}
+\newcommand{\leadershipwlusum}{
+    \item \dated{
+        Held multiple leadership positions for campus organizations, including LGBT orgs and
+        \href{https://sigep.org/}{fraternity}
+    }{2011--2014}
+}
+\newcommand{\leadershipra}{
+    \item \dated{
+        Co-founder and Social Media Chair of the
+        \href{https://www.facebook.com/groups/417758651658266/}{LGBTQA Rockbridge Alliance} community organization
+    }{2013--2014}
+}
+\newcommand{\leadershipgei}{
+    \item \dated{Treasurer of the GLBTQ Equality Initiative at W\&L}{2012--2014}
+}
+\newcommand{\leadershipacm}{
+    \item \dated{Vice President and Secretary of the W\&L Chapter of Association for Computing Machinery}{2012--2014}
+}
+\newcommand{\leadershipsigep}{
+    \item \dated{
+        Vice President for Recruitment of the \href{https://sigep.org/}{Sigma Phi Epsilon Fraternity} at W\&L
+    }{2011--2013}
+}
+\newcommand{\leadershipitac}{
+    \item \dated{W\&L IT Advisory Committee Member (informed W\&L ITS of technology needs on campus)}{2010--2014}
+}
+
 \sectionheader{Leadership and Activities}
 \vspace{\headerAntispace}
 \begin{compactitem}
-    \iftoggle{highlightlgbt}
-    {% highlightlgbt == true
-        \leadershipglobe%    LGBT
+    \iftoggle{highlightlgbt}{% highlightlgbt == true
+        \leadershipunioncwa%
+        \leadershipunioncatalist%
+        \leadershipdeiasc%     LGBT
+        \leadershipglobe%      LGBT
         \activityhackathons%
-        \leadershipra%       LGBT
-        \leadershipgei%      LGBT
-        \leadershipsigep%
-        \leadershipacm%
-        \leadershipitac%
-    }
-    {% highlightlgbt == false
-        \activityhackathons% 2014-2015 Professional
-        \leadershipglobe%    2014-2015 Leadership (LGBT)
-        \leadershipacm%      2012-2014 Leadership
-        \leadershipitac%     2010-2014 Leadership
-        \leadershipsigep%    2011-2013 Leadership
-        \leadershipra%       2013-2014 Leadership (LGBT)
-        \leadershipgei%      2012-2014 Leadership (LGBT)
+        \iftoggle{sumwluleadership}{%
+            \leadershipwlusum% LGBT WLU
+        }{%
+            \leadershipra%       LGBT WLU
+            \leadershipgei%      LGBT WLU
+            \leadershipsigep%         WLU
+            \leadershipacm%           WLU
+            %\leadershipitac%          WLU
+        }
+    }{% highlightlgbt == false
+        \leadershipunioncwa%      2022-Present Leadership
+        \leadershipunioncatalist% 2021-2022    Leadership
+        \leadershipdeiasc%        2020-2021    Leadership LGBT
+        \activityhackathons%      2014-2015    Professional
+        \leadershipglobe%         2014-2015    Leadership LGBT
+        \iftoggle{sumwluleadership}{%
+            \leadershipwlusum%    2011-2014    Leadership LGBT WLU
+        }{%
+            \leadershipacm%           2012-2014    Leadership      WLU
+            %\leadershipitac%          2010-2014    Leadership      WLU
+            \leadershipsigep%         2011-2013    Leadership      WLU
+            \leadershipra%            2013-2014    Leadership LGBT WLU
+            \leadershipgei%           2012-2014    Leadership LGBT WLU
+        }
     }
     \iftoggle{ossmmentorship}{\item \dated{%
         Supercomputing and Parallel Processing Mentorship with Dr.\ Farideh Samadzadeh
@@ -371,6 +402,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % OTHER SECTIONS                                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtoggle{volunteering} \togglefalse{volunteering}
+\newtoggle{hobbies}      \togglefalse{hobbies}
+\newtoggle{references}   \togglefalse{references}
 
 \iftoggle{volunteering}{%
     \sectionheader{Volunteering}
