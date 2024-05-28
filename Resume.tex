@@ -86,7 +86,7 @@
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
     \IfFileExists{./secret_street.txt}{\input{./secret_street.txt}}{\textit{(full address available upon request)}}
     & Cell Phone:\ \IfFileExists{./secret_phone.txt}{\input{./secret_phone.txt}}{\textit{(available upon request)}}\\
-    Washington, DC  20009 USA
+    Washington, DC  20010 USA
     & Email:\ \texttt{\IfFileExists{./secret_email.txt}{\input{./secret_email.txt}}{chakra-angle0l@icloud.com}}\\
     \midrule
 \end{tabular*}
@@ -304,6 +304,7 @@ sustainability.
 % LEADERSHIP AND ACTIVITIES SECTION              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newtoggle{union}            \togglefalse{union}
 \newtoggle{highlightlgbt}    \toggletrue{highlightlgbt}
 \newtoggle{sumwluleadership} \toggletrue{sumwluleadership}
 \newtoggle{ossmmentorship}   \togglefalse{ossmmentorship}
@@ -363,8 +364,10 @@ sustainability.
 \vspace{\headerAntispace}
 \begin{compactitem}
     \iftoggle{highlightlgbt}{% highlightlgbt == true
-        \leadershipunioncwa%
-        \leadershipunioncatalist%
+        \iftoggle{union}{% union == true
+            \leadershipunioncwa%
+            \leadershipunioncatalist%
+        }{} % blank if union == false
         \leadershipdeiasc%     LGBT
         \leadershipglobe%      LGBT
         \activityhackathons%
@@ -378,8 +381,10 @@ sustainability.
             %\leadershipitac%          WLU
         }
     }{% highlightlgbt == false
-        \leadershipunioncwa%      2022-Present Leadership
-        \leadershipunioncatalist% 2021-2022    Leadership
+        \iftoggle{union}{% union == true
+            \leadershipunioncwa%      2022-present leadership
+            \leadershipunioncatalist% 2021-2022    Leadership
+        }{} % blank if union == false
         \leadershipdeiasc%        2020-2021    Leadership LGBT
         \activityhackathons%      2014-2015    Professional
         \leadershipglobe%         2014-2015    Leadership LGBT
