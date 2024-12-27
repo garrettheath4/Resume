@@ -3,26 +3,26 @@
 all: Resume.pdf
 
 %.pdf: %.tex
-	pdflatex $<
+	/Library/TeX/texbin/pdflatex $<
 
 clean:
 	rm Resume.pdf
 
-public:
+public: force
 	for f in email phone street; do \
 		if [ -f "secret_$$f.txt" ]; then \
 			mv "secret_$$f.txt" "secret_$$f.txt.off" ; \
 		fi ; \
 	done
 
-private:
+private: force
 	for f in email phone street; do \
 		if [ -f "secret_$$f.txt.off" ]; then \
 			mv "secret_$$f.txt.off" "secret_$$f.txt" ; \
 		fi ; \
 	done
 
-icloud:
+icloud: force
 	for f in email; do \
 		if [ -f "secret_$$f.txt" ]; then \
 			mv "secret_$$f.txt" "secret_$$f.txt.off" ; \
@@ -44,4 +44,7 @@ links:
 		fi ; \
 	done ; \
 	if [ "$$exit_code" -ne 0 ]; then false; fi
+
+force:
+	touch Resume.tex
 
