@@ -2,6 +2,12 @@
 
 all: Resume.pdf
 
+open:
+	open Resume.pdf
+
+edit:
+	open Resume.tex
+
 %.pdf: %.tex
 	/Library/TeX/texbin/pdflatex $<
 
