@@ -84,9 +84,11 @@
 \vspace{-8pt}
 
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-    \IfFileExists{./secret_street.txt}{\input{./secret_street.txt}}{\textit{(full address available upon request)}}
+    %\IfFileExists{./secret_street.txt}{\input{./secret_street.txt}}{
+        \textit{(full address available upon request)}
+    %}
     & Cell Phone:\ \IfFileExists{./secret_phone.txt}{\input{./secret_phone.txt}}{\textit{(available upon request)}}\\
-    Washington, DC  20010 USA
+    Amsterdam, Netherlands  1043 AC
     & Email:\ \texttt{\IfFileExists{./secret_email.txt}{\input{./secret_email.txt}}{chakra-angle0l@icloud.com}}\\
     \midrule
 \end{tabular*}
