@@ -1,0 +1,124 @@
+% vim: set textwidth=120 tabstop=4 softtabstop=4 expandtab smarttab shiftround autoindent smartindent:
+
+\usepackage{paralist}     % compact lists using `\begin{compactitem}` (instead of `\begin{itemize}`)
+\usepackage{hyperref}     % clickable URLs for \href text
+\usepackage{fullpage}     % minimize page margins
+\usepackage{calc}         % \newlength and \setlength commands
+\usepackage{etoolbox}     % \newtoggle command
+\usepackage{ulem}         % \ULdepth command
+\usepackage{lmodern}      % make bullet points smaller
+\usepackage{inconsolata}  % use Inconsolata font for typewriter text
+\usepackage{booktabs}     % use \midrule instead of \hline
+
+% hyperref package configuration
+\hypersetup{%
+    colorlinks=false,
+    urlbordercolor={1 1 1},
+    pdftitle={Garrett Heath Koller's Resume},
+    pdfauthor={Garrett Heath Koller},
+}
+
+% page setup using calc package
+\textheight=10in \pagestyle{empty} \raggedbottom{} \raggedright{}
+\setlength{\tabcolsep}{0in} \setlength{\columnwidth}{.5\textwidth}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\oddsidemargin}{-.5in}
+\addtolength{\evensidemargin}{-.5in}
+\addtolength{\textwidth}{1in}
+
+\setlength{\ULdepth}{5pt}
+
+\setlength{\parskip}{1cm plus1mm minus10mm}
+
+\newlength{\indwidth}            \setlength{\indwidth}{\textwidth-.4in}
+\newlength{\listSpacing}         \setlength{\listSpacing}{.0375in}
+\newlength{\headerAntispace}     \setlength{\headerAntispace}{-6pt}
+\newlength{\subListAntispace}    \setlength{\subListAntispace}{-.25in}
+\newlength{\subListMidAntispace} \setlength{\subListMidAntispace}{-2.5pt}
+\newlength{\subListEndAntispace} \setlength{\subListEndAntispace}{-.075in}
+\newlength{\subListDNEAntispace} \setlength{\subListDNEAntispace}{-7pt}
+
+\newcommand{\dated}[2]{
+    \begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
+        #1 & (\textit{#2})
+    \end{tabular*}
+}
+\newcommand{\datedTwo}[3]{
+    \begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
+        #1 & (\textit{#2}) (\textit{#3})
+    \end{tabular*}
+}
+
+\newcommand{\myul}[3]{
+    \begingroup
+        \renewcommand{\ULdepth}{#1}
+        \renewcommand{\ULthickness}{#2}
+        \uline{#3}
+    \endgroup
+}
+
+\newcommand{\sectionheader}[1]{
+    \myul{2.7pt}{0.5pt}{\large \textbf{#1}}
+}
+
+% commonly-used hyperlinks
+\newcommand{\LGBTQIAplus}{LGBTQIA\raisebox{0.1ex}{+}}
+\newcommand{\HTC}{\href{https://en.wikipedia.org/wiki/High-throughput_computing}{HTC}}
+\newcommand{\CatalistLLC}{\href{https://catalist.us/}{Catalist, LLC}}
+\newcommand{\BAH}{\href{https://www.boozallen.com/}{Booz Allen Hamilton}}
+\newcommand{\HTCondor}{\href{https://htcondor.org/}{HTCondor}}
+\newcommand{\Git}{\href{https://github.com/garrettheath4}{Git}}
+\newcommand{\Cloudera}{%
+    \href{https://www.cloudera.com/products/open-source/apache-hadoop/key-cdh-components.html}{Cloudera}}
+\newcommand{\Elasticsearch}{\href{https://www.elastic.co/elasticsearch/}{Elasticsearch}}
+\newcommand{\BlueGreen}{\href{https://www.redhat.com/en/topics/devops/what-is-blue-green-deployment}{Blue/Green}}
+
+% leadership activity commands
+\newcommand{\CWA}{\href{https://cwa-union.org/}{CWA}}
+\newcommand{\leadershipunioncwa}{
+    \item \dated{
+        Active Volunteer for the Bargaining Committees of companies unionizing with \CWA{} Union
+    }{2022--Present}
+}
+\newcommand{\leadershipunioncatalist}{
+    \item \dated{Elected member of Bargaining Committee for Catalist Union workers}{2021--2022}
+}
+\newcommand{\leadershipdeiasc}{
+    \item \dated{Appointed member of Diversity and Accessibility Committee for employees at \CatalistLLC}{2020--2021}
+}
+\newcommand{\leadershipglobe}{
+    \item \dated{Secretary of GLOBE,\ \BAH's \LGBTQIAplus{} Diversity Group}{2014--2015}
+}
+\newcommand{\activityhackathons}{
+    \item \dated{Hackathons hosted by \BAH:}{2014--2015}
+        \begin{compactitem}
+        \item PyNight (Feb 2015): 5th place out of 200 contestants in Python programming competition
+        \item Hack-A-Thon for Hope (2014): Created model to predict genocide for the Holocaust Memorial Museum
+        \end{compactitem}
+}
+\newcommand{\leadershipwlusum}{
+    \item \dated{
+        Held multiple leadership positions on W\&L campus, including \LGBTQIAplus{} orgs and
+        \href{https://sigep.org/}{fraternity}
+    }{2011--2014}
+}
+\newcommand{\leadershipra}{
+    \item \dated{
+        Co-founder and Social Media Chair of the
+        \href{https://www.facebook.com/groups/417758651658266/}{LGBTQA Rockbridge Alliance} community organization
+    }{2013--2014}
+}
+\newcommand{\leadershipgei}{
+    \item \dated{Treasurer of the GLBTQ Equality Initiative at W\&L}{2012--2014}
+}
+\newcommand{\leadershipacm}{
+    \item \dated{Vice President and Secretary of the W\&L Chapter of Association for Computing Machinery}{2012--2014}
+}
+\newcommand{\leadershipsigep}{
+    \item \dated{
+        Vice President for Recruitment of the \href{https://sigep.org/}{Sigma Phi Epsilon Fraternity} at W\&L
+    }{2011--2013}
+}
+\newcommand{\leadershipitac}{
+    \item \dated{W\&L IT Advisory Committee Member (informed W\&L ITS of technology needs on campus)}{2010--2014}
+}

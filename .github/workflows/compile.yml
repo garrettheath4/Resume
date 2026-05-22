@@ -5,6 +5,9 @@ on:
     branches: [master]
     paths:
       - Resume.tex
+      - resume_preamble.tex
+      - resume_toggle_defaults.tex
+      - resume_content.tex
       - .github/workflows/compile.yml
 
 permissions:

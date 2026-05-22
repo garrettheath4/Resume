@@ -1,10 +1,17 @@
 .PHONY: all clean public private phone force
 
-all: Resume.pdf Resume_private.pdf Resume_phone.pdf
+SHARED_TEX = resume_preamble.tex resume_toggle_defaults.tex resume_content.tex
 
-Resume.pdf: Resume.tex
+all: Resume.pdf Resume_private.pdf Resume_phone.pdf Resume_Mews.pdf
+
+Resume.pdf: Resume.tex $(SHARED_TEX)
 	$(MAKE) public
 	/Library/TeX/texbin/pdflatex -jobname=Resume Resume.tex
+	$(MAKE) clean-secrets
+
+Resume_Mews.pdf: Resume_Mews.tex $(SHARED_TEX)
+	$(MAKE) private
+	/Library/TeX/texbin/pdflatex -jobname=Resume_Mews Resume_Mews.tex
 	$(MAKE) clean-secrets
 
 Resume_private.pdf: Resume.tex
@@ -18,7 +25,7 @@ Resume_phone.pdf: Resume.tex
 	$(MAKE) clean-secrets
 
 clean:
-	rm -f Resume.pdf Resume_private.pdf Resume_phone.pdf *.aux *.log *.out
+	rm -f Resume.pdf Resume_private.pdf Resume_phone.pdf Resume_Mews.pdf *.aux *.log *.out
 
 # Reset secret files back to "safe" state after a build
 clean-secrets:
