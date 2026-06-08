@@ -46,7 +46,7 @@
             \href{https://www.wlu.edu/}{\textbf{Washington and Lee University}}, Lexington, VA, USA
             & (\textit{Sep 2010--May 2014}) \\
             B.S. Computer Science, concentration in Music (Graduated 2014)
-            \iftoggle{gpa}{| GPA:\ 3.3 / Major GPA:\ 3.4}{}\\
+            & \iftoggle{gpa}{GPA:\ 3.3 / Major GPA:\ 3.4}{}\\
         \end{tabular*}
     \item[]
         \begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
@@ -59,7 +59,7 @@
         \item[]
             \begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
                 \href{https://www.ossm.edu/}
-                {\textbf{Oklahoma School of Science and Mathematics}}, Oklahoma City, OK
+                {\textbf{Oklahoma School of Science and Mathematics}}, Oklahoma City, OK, USA
                 & (\textit{2008--2010}) \\
                 \iftoggle{gpa}{This college-preparatory residential charter high school intentionally omits GPAs on its
                 transcripts.}{}
@@ -68,7 +68,7 @@
     \iftoggle{cphs}{%
         \item[]
             \begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
-                \textbf{Charles Page High School}, Sand Springs, OK (Class Rank: 1 of 402) &
+                \textbf{Charles Page High School}, Sand Springs, OK, USA (Class Rank: 1 of 402) &
                 (\textit{2006--2008})
             \end{tabular*}
     }{}% else leave out CPHS
@@ -107,7 +107,7 @@
 \sectionheader{Employment}
 \vspace{\headerAntispace}
 \begin{compactitem}
-    \item \dated{Lead Software Engineer at \CatalistLLC}{September 2015--Present}
+    \employmentitem{Lead Software Engineer at \CatalistLLC}{September 2015--Present}
         \begin{compactitem}
             \iftoggle{productfocus}{%
                 \item Operated without dedicated Product Managers or Designers, owning scope definition and product decisions
@@ -135,27 +135,27 @@
             \item Wrote documentation that ranged from getting-started tutorials to technical code documentation
             \item Taught 30 coworkers in 3 concurrent Python courses to foster Python proficiency across the company
         \end{compactitem}
-    \item \dated{Senior Software Engineer at \href{https://www.privatecollection.com/}{Private Collection}}{November 2024--February 2025}
+    \employmentitem{Senior Software Engineer at \href{https://www.privatecollection.com/}{Private Collection}}{November 2024--February 2025}
         \begin{compactitem}
             \item Developed full-stack \href{https://redwoodjs.com/}{Redwood JS} (React, GraphQL, Prisma) web app for
                 real estate brokerage clients
             \item Sole engineer with no dedicated PM or Designer; shipped directly to production daily via GitHub Actions
         \end{compactitem}
     \iftoggle{bahconsultant}{%
-        \item \dated{Software Engineer Consultant at \BAH}{July 2014--September 2015}
+        \employmentitem{Software Engineer Consultant at \BAH}{July 2014--September 2015}
             \begin{compactitem}
                 \item Developed mission support software for a DoD client on the C3E DIA/Military Intel team
                 \item Utilized Java EE, Spring, and Hibernate frameworks and an Oracle Database to serve a Tomcat web app
                 %\item Designed and implemented multi-language web-based front-end using JSP and JQuery
             \end{compactitem}
     }{}
-    \item \dated{Technical Specialist at the Information Technology Services HelpDesk at W\&L}{April 2012--June 2014}
+    \employmentitem{Technical Specialist at the Information Technology Services HelpDesk at W\&L}{April 2012--June 2014}
         \begin{compactitem}
         % W&L campus used Aruba Wi-Fi access points
         \item Resolved 2-year-long problem with Wi-Fi network periodically disconnecting every Apple device on campus
         \end{compactitem}
     \iftoggle{wluresearch}{%
-        \item \dated{Software Engineer Research Assistant at W\&L with Dr.\ Joshua Stough}{June 2011--May 2014}
+        \employmentitem{Software Engineer Research Assistant at W\&L with Dr.\ Joshua Stough}{June 2011--May 2014}
             \begin{compactitem}
             \item Developed an \HTCondor{} supercomputing environment and provided support and system administration
             %\item Expanding the applicability of this computing system and providing support to users
@@ -231,10 +231,8 @@
 \vspace{\headerAntispace}
 \begin{compactitem}
     \iftoggle{highlightlgbt}{% highlightlgbt == true
-        \iftoggle{union}{% union == true
-            \leadershipunioncwa%
-            \leadershipunioncatalist%
-        }{} % blank if union == false
+        \iftoggle{union}{\leadershipunioncwa}{\relax}%
+        \iftoggle{union}{\leadershipunioncatalist}{\relax}%
         \leadershipdeiasc%     LGBT
         \leadershipglobe%      LGBT
         \activityhackathons%
@@ -246,12 +244,20 @@
             \leadershipsigep%         WLU
             \leadershipacm%           WLU
             %\leadershipitac%          WLU
-        }
+        }%
+        \iftoggle{ossmmentorship}{\item \dated{%
+            Supercomputing and Parallel Processing Mentorship with Dr.\ Farideh Samadzadeh
+        }{2009--2010}}{\vspace{-3pt}}%
+        \iftoggle{qbsocial}{\item \dated{%
+            Social Media Chair of the \href{https://www.questbridge.org/scholars}{Quest Scholars Network} Chapter of W\&L
+        }{2011--}}{\vspace{-3pt}}%
+        \iftoggle{shakespeare}{\item \dated{%
+            Actor and Technical Assistant for \href{https://www.youtube.com/user/WLUShakespeare}{Shakespeare Society} at
+            W\&L
+        }{2011--2012}}{\vspace{-3pt}}%
     }{% highlightlgbt == false
-        \iftoggle{union}{% union == true
-            \leadershipunioncwa%      2022-present leadership
-            \leadershipunioncatalist% 2021-2022    Leadership
-        }{} % blank if union == false
+        \iftoggle{union}{\leadershipunioncwa}{\relax}%
+        \iftoggle{union}{\leadershipunioncatalist}{\relax}%
         \leadershipdeiasc%        2020-2021    Leadership LGBT
         \activityhackathons%      2014-2015    Professional
         \leadershipglobe%         2014-2015    Leadership LGBT
@@ -263,18 +269,18 @@
             \leadershipsigep%         2011-2013    Leadership      WLU
             \leadershipra%            2013-2014    Leadership LGBT WLU
             \leadershipgei%           2012-2014    Leadership LGBT WLU
-        }
+        }%
+        \iftoggle{ossmmentorship}{\item \dated{%
+            Supercomputing and Parallel Processing Mentorship with Dr.\ Farideh Samadzadeh
+        }{2009--2010}}{\vspace{-3pt}}%
+        \iftoggle{qbsocial}{\item \dated{%
+            Social Media Chair of the \href{https://www.questbridge.org/scholars}{Quest Scholars Network} Chapter of W\&L
+        }{2011--}}{\vspace{-3pt}}%
+        \iftoggle{shakespeare}{\item \dated{%
+            Actor and Technical Assistant for \href{https://www.youtube.com/user/WLUShakespeare}{Shakespeare Society} at
+            W\&L
+        }{2011--2012}}{\vspace{-3pt}}%
     }
-    \iftoggle{ossmmentorship}{\item \dated{%
-        Supercomputing and Parallel Processing Mentorship with Dr.\ Farideh Samadzadeh
-    }{2009--2010}}{\vspace{-3pt}}
-    \iftoggle{qbsocial}{\item \dated{%
-        Social Media Chair of the \href{https://www.questbridge.org/scholars}{Quest Scholars Network} Chapter of W\&L
-    }{2011--}}{\vspace{-3pt}}
-    \iftoggle{shakespeare}{\item \dated{%
-        Actor and Technical Assistant for \href{https://www.youtube.com/user/WLUShakespeare}{Shakespeare Society} at
-        W\&L
-    }{2011--2012}}{\vspace{-3pt}}
     %\item \dated{Masonic ``Student of Today'' Leadership Award}{2006, 2007}
     %    \begin{compactitem} \item Implemented Dr. Farideh Samadzadeh's HPC process scheduling algorithm}
     %    \end{compactitem}
@@ -296,19 +302,20 @@
     \sectionheader{Volunteering}
     \vspace{\headerAntispace}
     \begin{compactitem}
-        \begin{compactitem}
+        \item \dated{Eagle Scout Service Project, Tulsa Boys' Home}{2010}
+            \begin{compactitem}
             \item Built horse training equipment for the Tulsa Boys Home (non-profit)
             \item 22.5 total hours of both planning and carrying out the project
-        \end{compactitem}
+            \end{compactitem}
         \item \dated{School Service, Oklahoma School of Science and Mathematics}{2009}
             \begin{compactitem}
             \item Over 60 hours of aiding in the library and giving campus tours
             \end{compactitem}
-        \item \dated{Volunteer, GreenTree Assisted Living, Sand Springs, OK}{2009}
+        \item \dated{Volunteer, GreenTree Assisted Living, Sand Springs, OK, USA}{2009}
             \begin{compactitem}
             \item 22.5 hours of assisting with the needs of senior citizens
             \end{compactitem}
-        \item \dated{Volunteer, Methodist Manor, Tulsa, OK}{2006}
+        \item \dated{Volunteer, Methodist Manor, Tulsa, OK, USA}{2006}
             \begin{compactitem}
             \item 40 hours of assisting with the needs of senior citizens
             \end{compactitem}

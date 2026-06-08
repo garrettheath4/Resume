@@ -9,6 +9,7 @@
 \usepackage{lmodern}      % make bullet points smaller
 \usepackage{inconsolata}  % use Inconsolata font for typewriter text
 \usepackage{booktabs}     % use \midrule instead of \hline
+\usepackage{needspace}    % \needspace{X} — force page break before item if less than X remains
 
 % hyperref package configuration
 \hypersetup{%
@@ -43,7 +44,11 @@
 \newcommand{\dated}[2]{
     \begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
         #1 & (\textit{#2})
-    \end{tabular*}
+    \end{tabular*}%
+}
+\newcommand{\employmentitem}[2]{%
+    \needspace{3\baselineskip}%
+    \item \dated{#1}{#2}%
 }
 \newcommand{\datedTwo}[3]{
     \begin{tabular*}{\indwidth}{l@{\extracolsep{\fill}}r}
