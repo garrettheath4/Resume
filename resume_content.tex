@@ -16,7 +16,7 @@
     %}
     & Cell Phone:\ \IfFileExists{./secret_phone.txt}{\input{./secret_phone.txt}}{\textit{(available upon request)}}\\
     Amsterdam, Netherlands
-    & Email:\ \texttt{\IfFileExists{./secret_email.txt}{\input{./secret_email.txt}}{chakra-angle0l@icloud.com}}\\
+    & Email:\ \texttt{\IfFileExists{./secret_email.txt}{\input{./secret_email.txt}}{\input{./public_email.txt}}}\\
     \midrule
 \end{tabular*}
 
@@ -30,6 +30,13 @@
     As a Software Engineer, I am driven to leverage my technical skills to create solutions that not only enhance the lives
     of individuals but also have a positive impact on society at large by focusing on diversity, accessibility, and
     sustainability.
+    \end{center}
+}{}
+\iftoggle{airwallexgoals}{%
+    \begin{center}
+    As a Software Engineer with a decade of experience building high-throughput distributed systems in Java, Scala, and
+    TypeScript on GCP and AWS, I am eager to apply that depth to global payment infrastructure --- engineering the
+    reliable, scalable systems that businesses worldwide depend on to move money.
     \end{center}
 }{}
 
@@ -81,7 +88,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{tabular*}{\textwidth}{p{2.4cm} l}
-    {\large \textbf{Skills:}}    & Python, JavaScript, TypeScript, React, RedwoodJS, Java (EE, Tomcat), Scala, Ruby, C, Linux, Bash \\
+    {\large \textbf{Skills:}}    & Python, JavaScript, TypeScript, React, Java (EE, Spring, Tomcat), Scala, Ruby, C, Linux, %
+                                   \iftoggle{kubernetes}{Kubernetes}{Bash} \\
                                  & Cloud (GCP, AWS), Docker, IaC (Terraform, Ansible), CI/CD, SQL, \Git, \HTC{} (Hadoop/\Cloudera) \\
     \iftoggle{clearance}{%
     {\large \textbf{Clearance:}} & Top Secret SCI (CI Poly: August 11, 2015. / %
@@ -121,8 +129,8 @@
             }{}
             \item Lead developer for 10 projects across 5 different languages (Java, Scala, Python, TypeScript, and
                 Bash)
-            \item Led implementation of client cloud data processing system leveraging
-                \href{https://hadoop.apache.org/}{Hadoop}, Google Cloud, and \href{https://airflow.apache.org/}{Airflow}
+            \item Led implementation of client data processing leveraging \href{https://hadoop.apache.org/}{Hadoop},
+                AWS, GCS, Pub/Sub, and \href{https://airflow.apache.org/}{Airflow}
             \item Developed full-stack client-facing data engineering web app using Java, Scala, TypeScript, and React
             \item Enhanced multiple public-facing APIs written in Java and Scala to better fit clients' data analytics
                 needs

@@ -1,0 +1,18 @@
+% Garrett Heath Koller Resume -- Airwallex (Senior) Software Engineer, Payments Platform application
+% vim: set textwidth=120 tabstop=4 softtabstop=4 expandtab smarttab shiftround autoindent smartindent:
+\documentclass[11pt, letterpaper]{letter}
+\input{resume_preamble}
+\input{resume_toggle_defaults}
+% Airwallex-specific toggle overrides
+\togglefalse{goals}           % replaced by airwallexgoals
+\toggletrue{airwallexgoals}   % fintech/payments-focused goal statement
+\toggletrue{aitools}          % they explicitly value AI tool usage
+\toggletrue{kubernetes}       % adds Kubernetes + GCP Pub/Sub + AWS Kinesis to skills
+% bahconsultant=true by default: Java EE + Spring + Hibernate at BAH is the strongest match for their Spring Boot req
+% wluresearch=true by default
+% languages=true by default: Dutch (A2) is a meaningful signal for an Amsterdam-based role
+% highlightlgbt=true by default
+% sumwluleadership=true by default (keeps WLU section concise)
+\begin{document}
+\input{resume_content}
+\end{document}

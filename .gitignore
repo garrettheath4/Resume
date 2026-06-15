@@ -1,4 +1,5 @@
 *secret*
+public_*.txt
 *.pdf
 
 # Created by https://www.toptal.com/developers/gitignore/api/vim,latex,macos
