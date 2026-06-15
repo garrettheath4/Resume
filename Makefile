@@ -2,7 +2,7 @@
 
 SHARED_TEX = resume_preamble.tex resume_toggle_defaults.tex resume_content.tex
 
-all: Resume.pdf Resume_private.pdf Resume_phone.pdf Resume_Mews.pdf CV.pdf
+all: Resume.pdf Resume_private.pdf Resume_phone.pdf Resume_Mews.pdf CV.pdf CV_private.pdf CV_phone.pdf
 
 Resume.pdf: Resume.tex $(SHARED_TEX)
 	$(MAKE) public
@@ -29,8 +29,18 @@ Resume_phone.pdf: Resume.tex
 	/Library/TeX/texbin/pdflatex -jobname=Resume_phone Resume.tex
 	$(MAKE) clean-secrets
 
+CV_private.pdf: CV.tex $(SHARED_TEX)
+	$(MAKE) private
+	/Library/TeX/texbin/pdflatex -jobname=CV_private CV.tex
+	$(MAKE) clean-secrets
+
+CV_phone.pdf: CV.tex $(SHARED_TEX)
+	$(MAKE) phone
+	/Library/TeX/texbin/pdflatex -jobname=CV_phone CV.tex
+	$(MAKE) clean-secrets
+
 clean:
-	rm -f Resume.pdf Resume_private.pdf Resume_phone.pdf Resume_Mews.pdf CV.pdf *.aux *.log *.out
+	rm -f Resume.pdf Resume_private.pdf Resume_phone.pdf Resume_Mews.pdf CV.pdf CV_private.pdf CV_phone.pdf *.aux *.log *.out
 
 # Reset secret files back to "safe" state after a build
 clean-secrets:
