@@ -36,18 +36,18 @@ jobs:
         id: date
         run: echo "date=$(date -u +%Y-%m-%d)" >> $GITHUB_OUTPUT
 
-      - name: Publish to GitHub Releases (latest)
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: latest
-          name: Resume (latest)
-          make_latest: true
-          files: Resume.pdf
-
       - name: Publish to GitHub Releases (dated)
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.date.outputs.date }}
           name: ${{ steps.date.outputs.date }}
           make_latest: false
+          files: Resume.pdf
+
+      - name: Publish to GitHub Releases (latest)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Resume (latest)
+          make_latest: true
           files: Resume.pdf
