@@ -1,0 +1,17 @@
+% Garrett Heath Koller Resume -- agap2 Netherlands Full Stack Engineer application
+% vim: set textwidth=120 tabstop=4 softtabstop=4 expandtab smarttab shiftround autoindent smartindent:
+\documentclass[11pt, letterpaper]{letter}
+\input{resume_preamble}
+\input{resume_toggle_defaults}
+\togglefalse{goals}           % replaced by agap2goals
+\toggletrue{agap2goals}       % platform/full-stack focused goal statement
+\toggletrue{agap2skills}      % adds AWS Lambda, Sentry, Jest to skills
+\toggletrue{aitools}          % modern engineering consultancy, AI tooling is relevant
+% bahconsultant=true by default: Java EE + Spring history is fine background context
+% wluresearch=true by default
+% languages=true by default: Dutch (A2) is a meaningful signal for Amsterdam-based role
+% highlightlgbt=true by default
+% sumwluleadership=true by default (keeps WLU section concise)
+\begin{document}
+\input{resume_content}
+\end{document}

@@ -2,7 +2,7 @@
 
 SHARED_TEX = resume_preamble.tex resume_toggle_defaults.tex resume_content.tex
 
-all: Resume.pdf Resume_private.pdf Resume_phone.pdf Mews/Resume_Mews.pdf Airwallex/Resume_Airwallex.pdf CV/CV.pdf CV/CV_private.pdf CV/CV_phone.pdf
+all: Resume.pdf Resume_private.pdf Resume_phone.pdf Mews/Resume_Mews.pdf Airwallex/Resume_Airwallex.pdf agap2/Resume_agap2.pdf CV/CV.pdf CV/CV_private.pdf CV/CV_phone.pdf
 
 Resume.pdf: Resume.tex $(SHARED_TEX)
 	$(MAKE) public
@@ -22,6 +22,11 @@ CV/CV.pdf: CV/CV.tex $(SHARED_TEX)
 Airwallex/Resume_Airwallex.pdf: Airwallex/Resume_Airwallex.tex $(SHARED_TEX)
 	$(MAKE) public
 	/Library/TeX/texbin/pdflatex -output-directory=Airwallex -jobname=Resume_Airwallex Airwallex/Resume_Airwallex.tex
+	$(MAKE) clean-secrets
+
+agap2/Resume_agap2.pdf: agap2/Resume_agap2.tex $(SHARED_TEX)
+	$(MAKE) public
+	/Library/TeX/texbin/pdflatex -output-directory=agap2 -jobname=Resume_agap2 agap2/Resume_agap2.tex
 	$(MAKE) clean-secrets
 
 Resume_private.pdf: Resume.tex
@@ -48,6 +53,7 @@ clean:
 	rm -f Resume.pdf Resume_private.pdf Resume_phone.pdf *.aux *.log *.out
 	rm -f Mews/Resume_Mews.pdf Mews/Resume_Mews.aux Mews/Resume_Mews.log Mews/Resume_Mews.out
 	rm -f Airwallex/Resume_Airwallex.pdf Airwallex/Resume_Airwallex.aux Airwallex/Resume_Airwallex.log Airwallex/Resume_Airwallex.out
+	rm -f agap2/Resume_agap2.pdf agap2/Resume_agap2.aux agap2/Resume_agap2.log agap2/Resume_agap2.out
 	rm -f CV/CV.pdf CV/CV_private.pdf CV/CV_phone.pdf CV/CV.aux CV/CV_private.aux CV/CV_phone.aux CV/CV.log CV/CV_private.log CV/CV_phone.log CV/CV.out CV/CV_private.out CV/CV_phone.out
 
 # Reset secret files back to "safe" state after a build

@@ -25,6 +25,7 @@
 % GOALS SECTION                                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\vspace{\headerAntispace}
 \iftoggle{goals}{%
     \begin{center}
     As a Software Engineer, I am driven to leverage my technical skills to create solutions that not only enhance the
@@ -39,6 +40,13 @@
     reliable, scalable systems that businesses worldwide depend on to move money.
     \end{center}
 }{}
+\iftoggle{agap2goals}{%
+    \begin{center}
+    A Full Stack Engineer with a decade of TypeScript, Python, and AWS experience, eager to help agap2
+    build the shared CI/CD platform, observability foundations, and developer tooling teams depend on.
+    \end{center}
+}{}
+\vspace{\headerAntispace}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -102,6 +110,9 @@
     }{}
     \iftoggle{aitools}{%
     {\large \textbf{AI Tools:}}  & Claude Code, Cursor, IntelliJ IDEA AI, Gemini Code Assist \\
+    }{}
+    \iftoggle{agap2skills}{%
+    {\large \textbf{Tooling:}}   & AWS Lambda (serverless), Sentry (observability), Jest \\
     }{}
     \iftoggle{languages}{%
     {\large \textbf{Languages:}} & English (native); Dutch (A2, actively learning since September 2025) \\
