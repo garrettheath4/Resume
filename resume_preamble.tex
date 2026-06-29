@@ -14,7 +14,13 @@
 % hyperref package configuration
 \hypersetup{%
     colorlinks=false,
+    %urlcolor=black,
     %urlbordercolor={1 1 1},  % default: 0 1 1 (magenta)
+    %pdfborderstyle={style width}
+    % Default: {/S/S/W 1}. Underline: {/S/U/W 1}.
+    % Options: /S Solid, /B Beveled, /D Dashed, /I Inset, /U Underline, /W Width.
+    % Note: Many PDF viewers do not support underlined links and so may default to solid boxes instead.
+    pdfborderstyle={/S/U/W 1},  % underline if supported, otherwise box
     pdftitle={Garrett Heath Koller's Resume},
     pdfauthor={Garrett Heath Koller},
     pdfsubject={Software Engineer Resume},
@@ -97,7 +103,7 @@
     \item \dated{Secretary of GLOBE,\ \BAH's \LGBTQIAplus{} Diversity Group}{2014--2015}
 }
 \newcommand{\activityhackathons}{
-    \item \dated{Hackathons hosted by \BAH:}{2014--2015}
+    \item \dated{Hackathons hosted by Booz Allen Hamilton:}{2014--2015}
         \begin{compactitem}
         \item PyNight (Feb 2015): 5th place out of 200 contestants in Python programming competition
         \item Hack-A-Thon for Hope (2014): Created model to predict genocide for the Holocaust Memorial Museum
