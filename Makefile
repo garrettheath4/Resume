@@ -2,7 +2,7 @@
 
 SHARED_TEX = resume_preamble.tex resume_toggle_defaults.tex resume_content.tex
 
-all: Resume.pdf Resume_private.pdf Resume_phone.pdf Mews/Resume_Mews.pdf Airwallex/Resume_Airwallex.pdf agap2/Resume_agap2.pdf CV/CV.pdf CV/CV_private.pdf CV/CV_phone.pdf
+all: Resume.pdf Resume_private.pdf Resume_phone.pdf Mews/Resume_Mews.pdf Airwallex/Resume_Airwallex.pdf agap2/Resume_agap2.pdf Cboe/Resume_Cboe.pdf DataSnipper/Resume_DataSnipper.pdf CV/CV.pdf CV/CV_private.pdf CV/CV_phone.pdf
 
 Resume.pdf: Resume.tex $(SHARED_TEX)
 	$(MAKE) public
@@ -27,6 +27,16 @@ Airwallex/Resume_Airwallex.pdf: Airwallex/Resume_Airwallex.tex $(SHARED_TEX)
 agap2/Resume_agap2.pdf: agap2/Resume_agap2.tex $(SHARED_TEX)
 	$(MAKE) public
 	/Library/TeX/texbin/pdflatex -output-directory=agap2 -jobname=Resume_agap2 agap2/Resume_agap2.tex
+	$(MAKE) clean-secrets
+
+Cboe/Resume_Cboe.pdf: Cboe/Resume_Cboe.tex $(SHARED_TEX)
+	$(MAKE) public
+	/Library/TeX/texbin/pdflatex -output-directory=Cboe -jobname=Resume_Cboe Cboe/Resume_Cboe.tex
+	$(MAKE) clean-secrets
+
+DataSnipper/Resume_DataSnipper.pdf: DataSnipper/Resume_DataSnipper.tex $(SHARED_TEX)
+	$(MAKE) public
+	/Library/TeX/texbin/pdflatex -output-directory=DataSnipper -jobname=Resume_DataSnipper DataSnipper/Resume_DataSnipper.tex
 	$(MAKE) clean-secrets
 
 Resume_private.pdf: Resume.tex
@@ -54,6 +64,8 @@ clean:
 	rm -f Mews/Resume_Mews.pdf Mews/Resume_Mews.aux Mews/Resume_Mews.log Mews/Resume_Mews.out
 	rm -f Airwallex/Resume_Airwallex.pdf Airwallex/Resume_Airwallex.aux Airwallex/Resume_Airwallex.log Airwallex/Resume_Airwallex.out
 	rm -f agap2/Resume_agap2.pdf agap2/Resume_agap2.aux agap2/Resume_agap2.log agap2/Resume_agap2.out
+	rm -f Cboe/Resume_Cboe.pdf Cboe/Resume_Cboe.aux Cboe/Resume_Cboe.log Cboe/Resume_Cboe.out
+	rm -f DataSnipper/Resume_DataSnipper.pdf DataSnipper/Resume_DataSnipper.aux DataSnipper/Resume_DataSnipper.log DataSnipper/Resume_DataSnipper.out
 	rm -f CV/CV.pdf CV/CV_private.pdf CV/CV_phone.pdf CV/CV.aux CV/CV_private.aux CV/CV_phone.aux CV/CV.log CV/CV_private.log CV/CV_phone.log CV/CV.out CV/CV_private.out CV/CV_phone.out
 
 # Reset secret files back to "safe" state after a build
