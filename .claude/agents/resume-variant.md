@@ -15,7 +15,7 @@ You are helping Garrett assess a job posting and, if it's a good fit, create a t
 - `resume_preamble.tex` — LaTeX packages and macros
 - `<Company>/Resume_<Company>.tex` — one file per application (Airwallex, agap2, Cboe, DataSnipper, Mews)
 - `Makefile` — builds everything; each variant has its own target + entry in `all:` + `clean:`
-- `README.md` — has a table of `make` targets; add a row for each new variant
+- `README.md` — has a table of `make` targets; do not modify it for company-specific variants
 - pdflatex binary: `/Library/TeX/texbin/pdflatex`
 
 ## Step 1 — Read current state
@@ -62,6 +62,8 @@ Use `AskUserQuestion` with concise options. Do not ask about nice-to-haves unles
 
 ## Step 5 — Create the variant
 
+Use the Edit/Write tools for all file changes — do not use `sed`/`perl`/`awk` one-liners to modify `*.tex` or `Makefile` files.
+
 Use `<Company>` as the folder name (PascalCase, matching the company name exactly as in the job posting).
 
 ### 4a. New toggle in `resume_toggle_defaults.tex`
@@ -86,6 +88,7 @@ Add a new `\iftoggle` block after the last existing `...goals` block, immediatel
 **Goal statement guidelines:**
 - Target 2 rendered PDF lines (≈ 200 chars total)
 - Keep each `.tex` line under ~110 characters
+- To check character counts, use `wc -m` (e.g. `echo -n "goal statement text" | wc -m`) — do not use Python for this
 - Lead with the strongest language/skill match for the role
 - Name the company and the role domain
 - If the role requires AI-assisted engineering, mention it
@@ -137,12 +140,7 @@ Also update:
 
 ### 4e. README.md
 
-Add a row to the building table:
-```
-| `make <Company>/Resume_<Company>.pdf` | <Company> tailored resume | public email only |
-```
-
-Also update the prose line listing subdirectories to include `<Company>/`.
+Do not modify `README.md` for company-specific variants — leave it untouched.
 
 ## Step 6 — Compile and verify
 
@@ -160,3 +158,17 @@ Briefly state:
 - Which toggles were enabled and why
 - What the goal statement emphasizes and why
 - Any gaps that couldn't be addressed (honest signal for the user)
+
+## Step 8 — Offer a cover letter (optional)
+
+Ask Garrett whether he'd like cover letter text for this application. He copies this text manually into a Pages
+document in iCloud Drive, so:
+- Output plain text only in your reply — no file creation, no LaTeX, no markdown formatting that wouldn't paste
+  cleanly into Pages.
+- Base it on the same resume content and gap answers used for this variant — don't fabricate anything not already
+  established as true in this conversation or on the resume.
+- Keep it concise (3–5 short paragraphs), name the company and role, and lead with the strongest match from Step 3's
+  fit assessment.
+- Do NOT use en dashes `–` OR em dashes `—` in the cover letter copy or if Garrett asks you to answer a question on the
+  application for him.
+- If Garrett declines, skip this step entirely.
