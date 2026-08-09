@@ -2,7 +2,7 @@
 
 SHARED_TEX = resume_preamble.tex resume_toggle_defaults.tex resume_content.tex
 
-all: Resume.pdf Resume_private.pdf Resume_phone.pdf Mews/Resume_Mews.pdf Airwallex/Resume_Airwallex.pdf agap2/Resume_agap2.pdf Cboe/Resume_Cboe.pdf DataSnipper/Resume_DataSnipper.pdf CV/CV.pdf CV/CV_private.pdf CV/CV_phone.pdf
+all: Resume.pdf Resume_private.pdf Resume_phone.pdf Mews/Resume_Mews.pdf Airwallex/Resume_Airwallex.pdf agap2/Resume_agap2.pdf Cboe/Resume_Cboe.pdf DataSnipper/Resume_DataSnipper.pdf JetBrains/Resume_JetBrains.pdf Swap/Resume_Swap.pdf Teero/Resume_Teero.pdf CV/CV.pdf CV/CV_private.pdf CV/CV_phone.pdf
 
 Resume.pdf: Resume.tex $(SHARED_TEX)
 	$(MAKE) public
@@ -39,6 +39,21 @@ DataSnipper/Resume_DataSnipper.pdf: DataSnipper/Resume_DataSnipper.tex $(SHARED_
 	/Library/TeX/texbin/pdflatex -output-directory=DataSnipper -jobname=Resume_DataSnipper DataSnipper/Resume_DataSnipper.tex
 	$(MAKE) clean-secrets
 
+JetBrains/Resume_JetBrains.pdf: JetBrains/Resume_JetBrains.tex $(SHARED_TEX)
+	$(MAKE) public
+	/Library/TeX/texbin/pdflatex -output-directory=JetBrains -jobname=Resume_JetBrains JetBrains/Resume_JetBrains.tex
+	$(MAKE) clean-secrets
+
+Swap/Resume_Swap.pdf: Swap/Resume_Swap.tex $(SHARED_TEX)
+	$(MAKE) public
+	/Library/TeX/texbin/pdflatex -output-directory=Swap -jobname=Resume_Swap Swap/Resume_Swap.tex
+	$(MAKE) clean-secrets
+
+Teero/Resume_Teero.pdf: Teero/Resume_Teero.tex $(SHARED_TEX)
+	$(MAKE) public
+	/Library/TeX/texbin/pdflatex -output-directory=Teero -jobname=Resume_Teero Teero/Resume_Teero.tex
+	$(MAKE) clean-secrets
+
 Resume_private.pdf: Resume.tex
 	$(MAKE) private
 	/Library/TeX/texbin/pdflatex -jobname=Resume_private Resume.tex
@@ -66,6 +81,9 @@ clean:
 	rm -f agap2/Resume_agap2.pdf agap2/Resume_agap2.aux agap2/Resume_agap2.log agap2/Resume_agap2.out
 	rm -f Cboe/Resume_Cboe.pdf Cboe/Resume_Cboe.aux Cboe/Resume_Cboe.log Cboe/Resume_Cboe.out
 	rm -f DataSnipper/Resume_DataSnipper.pdf DataSnipper/Resume_DataSnipper.aux DataSnipper/Resume_DataSnipper.log DataSnipper/Resume_DataSnipper.out
+	rm -f JetBrains/Resume_JetBrains.pdf JetBrains/Resume_JetBrains.aux JetBrains/Resume_JetBrains.log JetBrains/Resume_JetBrains.out
+	rm -f Swap/Resume_Swap.pdf Swap/Resume_Swap.aux Swap/Resume_Swap.log Swap/Resume_Swap.out
+	rm -f Teero/Resume_Teero.pdf Teero/Resume_Teero.aux Teero/Resume_Teero.log Teero/Resume_Teero.out
 	rm -f CV/CV.pdf CV/CV_private.pdf CV/CV_phone.pdf CV/CV.aux CV/CV_private.aux CV/CV_phone.aux CV/CV.log CV/CV_private.log CV/CV_phone.log CV/CV.out CV/CV_private.out CV/CV_phone.out
 
 # Reset secret files back to "safe" state after a build

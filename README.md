@@ -40,6 +40,9 @@ These are also listed in `.gitignore`.
 | `make agap2/Resume_agap2.pdf` | agap2 tailored resume | public email only |
 | `make Cboe/Resume_Cboe.pdf` | Cboe Global Markets tailored resume | public email only |
 | `make DataSnipper/Resume_DataSnipper.pdf` | DataSnipper tailored resume | public email only |
+| `make JetBrains/Resume_JetBrains.pdf` | JetBrains tailored resume | public email only |
+| `make Swap/Resume_Swap.pdf` | Swap tailored resume | public email only |
+| `make Teero/Resume_Teero.pdf` | Teero tailored resume | public email only |
 | `make clean` | _(removes all generated files)_ | — |
 
 Company-specific resumes live in their own subdirectories (`Mews/`, `Airwallex/`, `agap2/`, etc.) alongside their generated output files. The full CV lives in `CV/`.

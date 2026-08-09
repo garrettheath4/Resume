@@ -1,0 +1,17 @@
+% Garrett Heath Koller Resume -- Teero Software Engineer application
+% vim: set textwidth=120 tabstop=4 softtabstop=4 expandtab smarttab shiftround autoindent smartindent:
+\documentclass[11pt, letterpaper]{letter}
+\input{resume_preamble}
+\input{resume_toggle_defaults}
+\togglefalse{goals}           % replaced by teerogoals
+\toggletrue{teerogoals}       % ownership/orchestration focus is the strongest match for this role
+\toggletrue{productfocus}     % surfaces no-PM ownership + Claude Code adoption bullets, matches Teero's autonomy expectations
+% React Native: no experience -- not claimed anywhere on this variant, an honest gap
+\togglefalse{bahconsultant}   % DoD/enterprise Java EE context is the weakest fit; cut to make room for productfocus bullets
+\togglefalse{wluresearch}     % HPC background is a secondary fit; cut to keep this a one-page resume
+% languages=true by default: Dutch (A2) is a meaningful signal for Amsterdam-based role
+% highlightlgbt=true by default
+% sumwluleadership=true by default (keeps WLU section concise)
+\begin{document}
+\input{resume_content}
+\end{document}
