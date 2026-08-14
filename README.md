@@ -1,6 +1,6 @@
 # Resume for Garrett Heath Koller
 
-[Click here](https://github.com/garrettheath4/Resume/releases/download/latest/Resume.pdf) to view the Resume as a PDF file.
+[Click here to view the Resume as a PDF file](https://github.com/garrettheath4/Resume/releases/download/latest/Resume.pdf).
 
 This PDF was generated from the LaTeX code in the [`Resume.tex`](./Resume.tex) file.
 
@@ -31,19 +31,21 @@ These are also listed in `.gitignore`.
      <Company>/... pattern rows below already cover every company generically and stay accurate automatically.
      Adding per-company rows here creates upkeep that will go stale. See .claude/agents/resume-variant.md. -->
 
-| Command | Output | Contact info shown |
-|---|---|---|
-| `make` | all PDFs below | — |
-| `make Resume.pdf` | one-page resume | public email only |
-| `make Resume_phone.pdf` | one-page resume | real phone + public email |
-| `make Resume_private.pdf` | one-page resume | real phone + private email |
-| `make CV/CV.pdf` | multi-page CV (all sections) | public email only |
-| `make CV/CV_phone.pdf` | multi-page CV | real phone + public email |
-| `make CV/CV_private.pdf` | multi-page CV | real phone + private email |
-| `make <Company>/Resume_<Company>.pdf` | tailored resume for `<Company>` | public email only (unless overridden, e.g. Mews) |
-| `make <Company>/CV_<Company>.pdf` | tailored CV for `<Company>` (only exists for some companies) | public email only |
-| `make <Company>/CoverLetter_<Company>.pdf` | cover letter for `<Company>` (only exists for some companies) | public email only |
-| `make clean` | _(removes all generated files)_ | — |
+| Command                                    | Output                          | Contact info shown                    |
+| ------------------------------------------ | ------------------------------- | ------------------------------------- |
+| `make`                                     | all PDFs below                  | —                                     |
+| `make Resume.pdf`                          | one-page resume                 | public email only                     |
+| `make Resume_phone.pdf`                    | one-page resume                 | real phone + public email             |
+| `make Resume_private.pdf`                  | one-page resume                 | real phone + private email            |
+| `make CV/CV.pdf`                           | multi-page CV (all sections)    | public email only                     |
+| `make CV/CV_phone.pdf`                     | multi-page CV                   | real phone + public email             |
+| `make CV/CV_private.pdf`                   | multi-page CV                   | real phone + private email            |
+| `make <Company>/Resume_<Company>.pdf`      | tailored resume for `<Company>` | public email only (unless overridden) |
+| `make <Company>/CV_<Company>.pdf`          | tailored CV for `<Company>` *   | public email only                     |
+| `make <Company>/CoverLetter_<Company>.pdf` | cover letter for `<Company>` *  | public email only                     |
+| `make clean`                               | _(removes all generated files)_ | —                                     |
+
+> _Note_: `*` in the Output column above means "only exists for some companies"
 
 To see which companies currently have a tailored resume, CV, and/or cover letter, check the `COMPANIES`,
 `CV_COMPANIES`, and `COVERLETTER_COMPANIES` lists near the top of the `Makefile` (or run `ls */Resume_*.tex`).
