@@ -4,6 +4,41 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AGENT NOTES: RESUME-TAILORING CONTEXT          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The comments below record confirmed facts about Garrett's real experience -- gathered while building
+% company-specific resume variants -- that aren't otherwise visible in the rendered content below. Use them to
+% honestly tailor new variants (skills rows, goal statements, bullets) to a job posting. Don't invent claims beyond
+% what's stated here; if a posting needs something not covered, ask Garrett rather than guessing.
+%
+% Catalist (Lead Software Engineer, Sep 2015--Present):
+% - PostgreSQL, Spark, Celery, and Kafka experience is all from Catalist work (not personal projects).
+% - Redis experience is personal-project only, never used at work -- don't conflate with the above.
+% - MQTT experience also exists (distinct messaging protocol, not RabbitMQ -- no RabbitMQ experience); available as
+%   context for a future toggle if a posting calls for MQTT specifically.
+% - Real governance/IAM/security-policy (Google Cloud IAM) work: wrote, tested, and deployed Terraform code that
+%   directly created and managed IAM/security policy in a PROD GCP environment for Google Composer/Airflow. Also
+%   wrote/deployed Ansible code for on-prem server management, including some server permissions configuration
+%   (lighter-weight than the Terraform/GCP IAM work).
+% - The "Lead Software Engineer" title/Catalist leadership is purely technical/project leadership -- no formal
+%   people-management (no 1:1s, performance reviews, or direct-report growth accountability). Don't claim 2+ years
+%   of people leadership without checking with Garrett first.
+% - Java EE, Tomcat, and Hibernate experience at both Booz Allen Hamilton and Catalist.
+% - Very limited (old) hands-on Spring Boot experience at Booz Allen Hamilton and Catalist.
+% - No React Native experience -- not claimed anywhere.
+% - The Hadoop bullet in the Employment section previously named "(with Oozie workflows)" explicitly; that detail
+%   was trimmed for space in some variants (e.g. Teero) but the Oozie workflow-orchestration experience itself is
+%   real and from Catalist -- feel free to re-surface it if a posting calls for it and space allows.
+%
+% ML/AI-Engineer-specific gaps (confirmed, not claimed anywhere -- from TomTom AI Engineer assessment):
+% - No hands-on LLM fine-tuning.
+% - No eval/metrics-tracking systems built for model quality.
+% - No product-level prompt engineering (only using AI coding tools like Claude Code/Cursor as a developer).
+% - No MLOps model-training/deployment/monitoring automation (only general app CI/CD).
+% Don't overclaim these for ML/AI-Engineer-titled roles without checking with Garrett first.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DOCUMENT START                                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -74,6 +109,19 @@
     \begin{center}
     With a decade of full-stack engineering owning scope end-to-end without dedicated PMs, plus hands-on Airflow
     and Oozie workflow orchestration experience, eager to bring that ownership mindset to Teero.
+    \end{center}
+}{}
+\iftoggle{picnicgoals}{%
+    \begin{center}
+    With a decade of \textbf{Java} engineering and a track record leading technical delivery across teams and projects,
+    eager to bring that depth and hands-on \textbf{PostgreSQL} and \textbf{Terraform} production experience to Picnic as
+    Tech Lead.
+    \end{center}
+}{}
+\iftoggle{synthogoals}{%
+    \begin{center}
+    With a decade of Python engineering and hands-on PostgreSQL, Spark, Kafka, and Celery experience building
+    data-intensive systems, eager to bring that depth to Syntho as a Senior Software Engineer.
     \end{center}
 }{}
 \vspace{\headerAntispace}
@@ -147,6 +195,12 @@
     \iftoggle{swapskills}{%
     {\large \textbf{Tooling:}}   & Postgres, Cassandra, Vertica (for work), MongoDB, Redis, Traefik, n8n, \& %
                                    Cronicle (personal projects) \\
+    }{}
+    \iftoggle{picnicskills}{%
+    {\large \textbf{Tooling:}}   & PostgreSQL (for work); MongoDB (personal projects) \\
+    }{}
+    \iftoggle{synthoskills}{%
+    {\large \textbf{Tooling:}}   & PostgreSQL, Spark, Kafka, Celery (for work); Redis (personal projects) \\
     }{}
     \iftoggle{languages}{%
     {\large \textbf{Languages:}} & English (native); Dutch (A2, actively learning since September 2025) \\

@@ -1,0 +1,69 @@
+% vim: set textwidth=120 tabstop=4 softtabstop=4 expandtab smarttab shiftround autoindent smartindent:
+% Compiled with XeLaTeX (not pdflatex) so fontspec can load the named macOS system fonts below by name.
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fullpage}
+\usepackage{microtype}    % better line-breaking/justification, avoids overfull hboxes on long compound words
+
+\hypersetup{%
+    colorlinks=false,
+    pdfborderstyle={/S/U/W 1},
+    pdfauthor={Garrett Heath Koller},
+    pdfsubject={Cover Letter},
+}
+
+\pagestyle{empty}
+\raggedbottom{}
+\raggedright{}    % left-align body text (not justified) -- \begin{center}/\coverletterdate override locally as needed
+
+\definecolor{kollerblue}{HTML}{227AAF}
+
+% Body text (date, paragraphs, sign-off, email) -- Publico Text, style "Roman", 10pt, single-spaced (LaTeX's default
+% line spacing, i.e. no \usepackage{setspace} double-spacing -- 12pt leading on 10pt text is standard single spacing)
+\setmainfont{Publico Text Roman}
+\fontsize{10pt}{12pt}\selectfont
+
+% "Demi Bold" and "Bold" below are each a distinct font file in their family (not a regular weight + a bold toggle
+% applied on top), so each is selected directly via fontspec rather than combined with \textbf/\bfseries.
+\newfontfamily\coverletterheaderfont{Avenir Next Demi Bold}
+\newfontfamily\coverletternamefont{Publico Headline Bold}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{11pt}
+
+% Letterhead matching the "FROM THE DESK OF" style used in prior hand-written cover letters.
+% Heading line spacing is 1.3x the font size (8pt -> 10.4pt leading; 20pt -> 26pt leading).
+\newcommand{\coverletterheader}{%
+    \begin{center}
+    {\coverletterheaderfont\fontsize{8pt}{10.4pt}\selectfont FROM THE DESK OF}\\[8pt]
+    {\coverletternamefont\fontsize{20pt}{26pt}\selectfont\color{kollerblue}Garrett Heath Koller}
+    \end{center}
+    \vspace{18pt}
+}
+
+% Left-aligned date, positioned two lines above the "Dear <Company>," salutation (standard modified-block letter
+% format) -- call this right after \coverletterheader and before the salutation paragraph.
+\newcommand{\coverletterdate}{%
+    {\raggedright\today\par}
+    \vspace{\baselineskip}
+}
+
+% \href's URL argument uses catcode-sensitive scanning that breaks on \IfFileExists/\input used inline (unlike
+% \texttt{...}, which just typesets normally), so read the email into a plain macro of literal characters first via
+% \read -- that expands safely inside \href{mailto:...}.
+\newread\coverletteremailfile
+\IfFileExists{./secret_email.txt}{\openin\coverletteremailfile=secret_email.txt}{\openin\coverletteremailfile=public_email.txt}
+\read\coverletteremailfile to \coverletteremail
+\closein\coverletteremailfile
+
+% Usage: \coverlettersignoff{Warm regards} or \coverlettersignoff{Sincerely}
+\newcommand{\coverlettersignoff}[1]{%
+    \vspace{6pt}
+    #1,\\[24pt]
+    Garrett Heath Koller\\
+    \href{mailto:\coverletteremail}{\coverletteremail}\\
+    % Cover letters should always have my real phone number on it.
+    \IfFileExists{./secret_phone.txt}{\input{./secret_phone.txt}}{\IfFileExists{./secret_phone.txt.off}{\input{./secret_phone.txt.off}}{}}
+}

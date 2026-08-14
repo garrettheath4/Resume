@@ -1,0 +1,24 @@
+% Garrett Heath Koller Resume -- Syntho Senior Software Engineer application
+% vim: set textwidth=120 tabstop=4 softtabstop=4 expandtab smarttab shiftround autoindent smartindent:
+\documentclass[11pt, letterpaper]{letter}
+\input{resume_preamble}
+\input{resume_toggle_defaults}
+\togglefalse{goals}           % replaced by synthogoals
+\toggletrue{synthogoals}      % Python depth + PostgreSQL/Spark/Kafka/Celery data-systems experience is the strongest match
+\toggletrue{synthoskills}     % surfaces PostgreSQL/Spark/Kafka/Celery as real Catalist work experience; Redis honestly scoped as personal-only
+% provenance: PostgreSQL, Spark, Celery, and Kafka are all from Catalist work experience (query optimization/indexing
+% for Postgres); Redis is personal-project only, never used at work -- do not conflate the two
+% MQTT experience considered but omitted from this resume: MQTT is a different, related messaging protocol, not
+% RabbitMQ (which Garrett has no experience with) -- left out here to avoid implying RabbitMQ; revisit if Syntho's
+% posting calls out MQTT specifically
+% aitools left off: role posting doesn't explicitly call out AI-assisted engineering
+% kubernetes left off: not called out as a requirement
+% productfocus left off: role is IC engineering, not PM-style ownership
+% bahconsultant=true by default: enterprise Java EE/Spring backend context still relevant as an API/services analog
+% wluresearch=true by default: HPC background not central but doesn't hurt
+% languages=true by default: Dutch (A2) is a meaningful signal for Amsterdam-based role
+% highlightlgbt=true by default
+% sumwluleadership=true by default (keeps WLU section concise)
+\begin{document}
+\input{resume_content}
+\end{document}
