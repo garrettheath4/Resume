@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "James-Yu.latex-workshop",
+        "ms-vscode.makefile-tools",
+        "davidanson.vscode-markdownlint",
+        "streetsidesoftware.code-spell-checker",
+        "redhat.vscode-yaml",
+        "github.vscode-github-actions"
+    ]
+}
